@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>个人中心 {$site_info.site_name|default=''}</title>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <include file="public@head"/>
+    <link href="__TMPL__/public/assets/css/dianjing/personal.css" rel="stylesheet">
+    <link href="__TMPL__/public/assets/css/dianjing/footer.css" rel="stylesheet">
+
+</head>
+<body>
+<div id="body" v-cloak>
+    <div class="header">
+        个人中心
+    </div>
+    <div class="banner">
+        <div class="user">
+            <img src="{:empty($user['avatar'])?'__STATIC__/images/headicon.png':$user['avatar']}"  >
+        </div>
+        <p>{:empty($user['user_nickname'])?$user['user_login']:$user['user_nickname']}</p>
+    </div>
+    <div class="select" id="recharge">
+        <img src="__TMPL__/public/assets/images/dianjing/diamond.png" >
+        <span>{:empty($user['diamond']['number'])?'0.00':$user['diamond']['number']}</span>
+        <img src="__TMPL__/public/assets/images/dianjing/smart-right.png"  style="height: 12px; margin-top: 20px; margin-right:0; float: right" alt="">
+        <span style="font-size: 12px; float: right;color: #999; margin-right: 10px">去充值</span>
+    </div>
+    <div class="select" style="margin-bottom: 30px" id="change">
+        <img src="__TMPL__/public/assets/images/dianjing/gold.png"  >
+        <span>{:empty($user['gold']['number'])?'0.00':$user['gold']['number']}</span>
+        <img src="__TMPL__/public/assets/images/dianjing/smart-right.png"  style="height: 12px; margin-top: 20px; margin-right:0; float: right" alt="">
+        <span style="float: right; color: #999; margin-right: 10px ;font-size: 12px;">去兑换</span>
+    </div>
+    <div class="select" id="market">
+        <img src="__TMPL__/public/assets/images/dianjing/mall.png"  >
+        <span>商城中心</span>
+        <img src="__TMPL__/public/assets/images/dianjing/smart-right.png"  style="height: 10px; margin-top: 20px; margin-right:0; float: right" alt="">
+    </div>
+    <div class="select" id="my_guess">
+        <img src="__TMPL__/public/assets/images/dianjing/star.png"  >
+        <span>我的竞猜</span>
+        <img src="__TMPL__/public/assets/images/dianjing/smart-right.png"  style="height: 10px; margin-top: 20px; margin-right:0; float: right" alt="">
+    </div>
+    <div class="select" id="user_list">
+        <img src="__TMPL__/public/assets/images/dianjing/pen.png"  >
+        <span>账户记录</span>
+        <img src="__TMPL__/public/assets/images/dianjing/smart-right.png"  style="height: 10px; margin-top: 20px; margin-right:0; float: right" alt="">
+    </div>
+    <div class="footer">
+        <ul>
+            <li id="guessing" style="width: 50%">
+                <span>
+                     <span></span>
+                    <p>竞猜</p>
+                </span>
+            </li>
+            <li class="cur" style="width: 50%">
+                <span>
+                     <span></span>
+                    <p>个人</p>
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    $('#guessing').click(function () {
+        window.location.href="{:cmf_url('portal/Index/index')}"
+    });
+    $('#recharge').click(function () {
+        window.location.href="{:cmf_url('Recharge/index')}"
+    });
+    $('#change').click(function () {
+        window.location.href="{:cmf_url('Recharge/index',array('id' => 2))}"
+    });
+    $('#market').click(function () {
+        window.location.href="{:cmf_url('Goods/index')}"
+    });
+    $('#my_guess').click(function () {
+        window.location.href="{:cmf_url('MyGuess/index')}"
+    });
+    $('#user_list').click(function () {
+        window.location.href="{:cmf_url('UserMoney/index')}"
+    });
+
+</script>
+</body>
+</html>

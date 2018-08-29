@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>首页 {$site_info.site_name|default=''}</title>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <include file="public@head"/>
+    <link href="__TMPL__/public/assets/css/dianjing/guess_list.css" rel="stylesheet">
+</head>
+<body>
+<div id="body">
+    <div class="header">
+        <img src="__TMPL__/public/assets/images/dianjing/leidaegames.png"  style="height: 20px;margin-top: 15px;margin-left: 40px">
+        <div style="height: 50px;width: 40px;float: right" id="select" >
+            <img src="__TMPL__/public/assets/images/dianjing/tc.png" style="height: 20px;width: 20px;margin: 15px 0 0 ">
+        </div>
+    </div>
+    <div class="slide_picker game-box"  style="overflow: hidden;">
+        <div class="swiper-container">
+            <ul class="swiper-wrapper game" >
+                <li class="swiper-slide {:$type==0?'cur':''}"  url="{:cmf_url('Index/index',array('type' => 0))}">
+                    <div></div>
+                    <p>全部游戏</p>
+                </li>
+                <li class="swiper-slide {:$type==1?'cur':''}" url="{:cmf_url('Index/index',array('type' => 1))}">
+                    <div></div>
+                    <p>王者荣耀</p>
+                </li>
+                <li class="swiper-slide {:$type==2?'cur':''}" url="{:cmf_url('Index/index',array('type' => 2))}">
+                    <div></div>
+                    <p>英雄联盟</p>
+                </li>
+                <li class="swiper-slide {:$type==3?'cur':''}" url="{:cmf_url('Index/index',array('type' => 3))}">
+                    <div></div>
+                    <p>刀塔2</p>
+                </li>
+                <li class="swiper-slide {:$type==4?'cur':''}" url="{:cmf_url('Index/index',array('type' => 4))}">
+                    <div></div>
+                    <p>CS:GO</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="game" v-cloak>
+
+        <div class="content-list all">
+            <notempty name="data">
+                <volist  name="data" id="vo">
+                    <div class="list" >
+
+                        <div class="top">
+                    <span style="float: left;margin-right: 10px">
+                        <img src="{:$vo.Cicon}" style="height: 20px;">
+                    </span>
+                            <span class="time">{:$vo.classify}</span>
+                            <span class="tour">{:date('Y-m-d H:i:s',$vo['startTime'])}</span>
+                        </div>
+
+                        <div class="midden">
+                    <span>
+                        <div style="text-align: center">
+                            <img src="{:$vo.Aicon}"  style="height: 60px" >
+                        </div>
+                        <p style="text-align: center">{:$vo.Aname}</p>
+                    </span>
+                            <span class="num">
+                        <div>
+                            <switch name="vo['is_live']">
+                                <case value="1">
+                                     <div v-else style="font-size: 14px;line-height: 30px; width: 80px;height: 30px;border: 1px solid #666;margin-top: 52px;border-radius: 15px;background: #1a1a1a; color: #e0e000; text-align: center">
+                                赛前盘
+                            </div>
+                                </case>
+                                <case value="2">
+                                     <div  style="font-size: 14px;line-height: 30px; width: 80px;height: 30px;border: 1px solid #666;margin-top: 52px;border-radius: 15px;background: #1a1a1a; color: #e0e000; text-align: center">
+                                滚球盘
+                            </div>
+                                </case>
+                                <default/>
+                                未知
+                            </switch>
+                        </div>
+                        <p style="font-size: 16px;font-weight: 700;margin-top: 2px; width: 120%;margin-left: -10%;"></p>
+                    </span>
+                            <span>
+                        <div style="text-align: center">
+                            <img src="{:$vo.Bicon}"  style="height: 60px">
+                        </div>
+                    <p style="text-align: center">{:$vo.Bname}</p>
+                    </span>
+                        </div>
+
+                        <div class="bottom">
+                            <switch name="vo.bet_num">
+                                <case value="1">
+                                    <ul v-if="x.bet_num==0">
+                                        <li style="margin-top: 0">
+                                            <span style="background-image: url('__TMPL__/public/assets/images/dianjing/liveplay.png')"></span>
+                                            <span style="color: #666;">直播</span>
+                                        </li>
+                                        <li style="margin-top: 0">
+                                            <span style="background-image: url('__TMPL__/public/assets/images/dianjing/tz.png')"></span>
+                                            <span style="color: #666;">竞猜</span>
+                                        </li>
+                                    </ul>
+                                </case>
+                                <case value="2">
+                                    <ul v-else>
+                                        <switch name="vo['url_status']">
+                                            <case value="1">
+                                                <li style="margin-top: 0" v-if="x.url_status==0">
+                                                    <span></span>
+                                                    <span>直播</span>
+                                                </li>
+                                            </case>
+                                            <case value="2">
+                                                <li style="margin-top: 0" v-else class="competition">
+                                                    <span style="background-image: url('__TMPL__/public/assets/images/dianjing/liveplay@.png'); background-position: 0 4px"></span>
+                                                    <span style="color: #fff;">直播</span>
+                                                </li>
+                                            </case>
+                                            <defalut/>
+                                            未知
+                                        </switch>
+
+                                        <li style="margin-top: 0" class="competition">
+                                            <span></span>
+                                            <span>竞猜</span>
+                                        </li>
+                                    </ul>
+                                    <input type="hidden" value="{:cmf_url('Details/index',array('id'=>$vo['id']))}">
+                                </case>
+                                <defalut/>
+                                未知
+                            </switch>
+
+
+
+                        </div>
+                    </div>
+                </volist>
+
+                <else/>
+                <p class="nogame" style="text-align: center; margin-top: 200px;color: #ccc;  border-radius: 2px" v-cloak><img
+                        src="__TMPL__/public/assets/images/dianjing/nogame.png"  alt="">
+                    <br>
+                    暂无数据
+                </p>
+                <p class="load" style="text-align: center"><img src="__TMPL__/public/assets/images/dianjing/load.gif"  style="height: 15px;margin-top:200px; "></p>
+            </notempty>
+
+
+        </div>
+
+
+        <div class="footer">
+        <ul>
+            <li class="cur" style="width: 50%">
+                <span>
+                     <span></span>
+                    <p>竞猜</p>
+                </span>
+            </li>
+            <li id="personal"  style="width: 50%">
+                <span>
+                     <span></span>
+                    <p>个人</p>
+                </span>
+            </li>
+        </ul>Splicing
+    </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        //初始
+        var width = $(document.body).width();
+        splicing(width);
+        //调整
+        $(window).resize(function() {
+            var width = $(document.body).width();
+            splicing(width);
+        });
+        //跳转
+        $('#select').click(function () {
+            window.location.href = "{:cmf_url('Classify/index')}"
+        });
+
+        $('#personal').click(function () {
+            window.location.href = "{:cmf_url('user/Personal/index')}"
+        });
+
+        $('.swiper-slide').click(function () {
+            var str =  $(this).attr('url');
+            window.location.href = str;
+        });
+
+        $('.competition').click(function () {
+            var string = $(this).parent().next().val();
+            window.location.href = string;
+        })
+
+    });
+    //修改宽度
+    function splicing(width) {
+        var number = 5;
+        var str = width / number;
+        $('.swiper-slide').each(function () {
+            $(this).css('width', str);
+        });
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,695 @@
+body,h1,h2,h3,h4,p,div,li,ul,table,td,tr,span,a,dl,dt,dd,input,thead,tbody,footer,aside,header{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    list-style: none;
+    font-family: "Microsoft Yahei", "微软雅黑", "宋体", Tahoma, Arial, Helvetica, STHeiti;
+}
+.hidden{
+    display: none;
+}
+body{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/bgpic.jpg");
+    background-attachment: fixed;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+body:before {
+    content: ' ';
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url("/themes/simpleboot3/public/assets/images/dianjing/bgpic.jpg") center 0 no-repeat;
+    background-size: cover;
+}
+.header{
+    height: 50px;
+    width: 100%;
+    background: #1a1a1a;
+    text-align: center;
+    line-height: 44px;
+    color: #fff;
+    font-weight: 700;
+    position: fixed;
+    top:0;
+    z-index: 9999;
+}
+.header a img{
+    margin-top: 16px;
+    margin-left: 10px;
+    width: 10px;
+    float: left;
+}
+.game-box{
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    background:rgba(0,0,0,0.5);
+    margin-top: 50px;
+}
+.game{
+    width: 100%;
+    height: 100%;
+}
+.game>li{
+    width: 75px;
+    height: 50px;
+    color: #666;
+    font-size: 12px;
+    float: left;
+    margin-top: 5.5px;
+}
+.game li div{
+    height: 30px;
+    width: 30px;
+    background-size: 30px 30px;
+    margin:0 auto;
+}
+.game li:first-child div{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/all.png");
+}
+.game li:first-child.cur div{
+    height: 30px;
+    width: 30px;
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/all@.png");
+    background-size: 30px 30px;
+}
+.game>li>p{
+    text-align: center;
+    font-size: 10px;
+    margin-top: 5px;
+}
+.game li.cur p{
+    color: #ffffff;
+}
+.game li:nth-child(2) div{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/wzry.png");
+    background-size: 100% auto;
+}
+.game li:nth-child(2).cur div{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/wzry@.png");
+    background-size: 100% auto;
+}
+.game li:nth-child(3) div{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/lol.png");
+    background-size: 100% auto;
+}
+.game li:nth-child(3).cur div{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/lol@.png");
+}
+.game li:nth-child(4) div{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/DOTA2.png");
+}
+.game li:nth-child(4).cur div{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/DOTA2@.png");
+}
+.game li:nth-child(5) div{
+    background: url("/themes/simpleboot3/public/assets/images/dianjing/CSGO.png") no-repeat center;
+    background-size: auto 100%;
+}
+.game li:nth-child(5).cur div{
+    background: url("/themes/simpleboot3/public/assets/images/dianjing/CSGO@.png") no-repeat center;
+    background-size: auto 100%;
+}
+.game li:nth-child(6) div{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/fbhero.png");
+}
+.game li:nth-child(6).cur div{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/fbhero@.png");
+}
+/*.game li:nth-child(6) div{*/
+/*background-image: url("/themes/simpleboot3/public/assets/images/dianjing/sc.png");*/
+/*}*/
+/*.game li:nth-child(6).cur div{*/
+/*background-image: url("/themes/simpleboot3/public/assets/images/dianjing/sc@.png");*/
+/*}*/
+.game li:nth-child(7) div{
+    background: url("/themes/simpleboot3/public/assets/images/dianjing/sc2.png") no-repeat center;
+    background-size: 100% auto;
+}
+.game li:nth-child(7).cur div{
+    background: url("/themes/simpleboot3/public/assets/images/dianjing/sc2@.png") no-repeat center;
+    background-size: 100% auto;
+}
+/*.game li:nth-child(7) div{*/
+/*background: url("/themes/simpleboot3/public/assets/images/dianjing/hon.png") no-repeat center;*/
+/*background-size: 100% auto;*/
+/*}*/
+/*.game li:nth-child(7).cur div{*/
+/*background: url("/themes/simpleboot3/public/assets/images/dianjing/hon@.png") no-repeat center;*/
+/*background-size: 100% auto;*/
+/*}*/
+.game li:nth-child(8) div{
+    background: url("/themes/simpleboot3/public/assets/images/dianjing/lscs.png") no-repeat center;
+    background-size: 100% auto;
+}
+.game li:nth-child(8).cur div{
+    background: url("/themes/simpleboot3/public/assets/images/dianjing/lscs@.png") no-repeat center;
+    background-size: 100% auto;
+}
+.game li:nth-child(9) div{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/wow.png");
+}
+.game li:nth-child(9).cur div{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/wow@.png");
+}
+.game li:nth-child(10) div{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/smite.png");
+}
+.game li:nth-child(10).cur div{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/smite@.png");
+}
+.game li:nth-child(11) div{
+    background: url("/themes/simpleboot3/public/assets/images/dianjing/smash.png") no-repeat center;
+    background-size: 100% auto;
+}
+.game li:nth-child(11).cur div{
+    background: url("/themes/simpleboot3/public/assets/images/dianjing/smash@.png") no-repeat center;
+    background-size: 100% auto;
+}
+/*.game li:nth-child(13) div{*/
+/*background: url("/themes/simpleboot3/public/assets/images/dianjing/smash.png") no-repeat center;*/
+/*background-size: 100% auto;*/
+/*}*/
+/*.game li:nth-child(13).cur div{*/
+/*background: url("/themes/simpleboot3/public/assets/images/dianjing/smash@.png") no-repeat center;*/
+/*background-size: 100% auto;*/
+/*}*/
+.content-list{
+    width: 100%;
+    padding: 10px 10px 0;
+    margin-bottom: 50px;
+}
+.content-list .list{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.content-list .list .top{
+    width: 100%;
+    height: 30px;
+    background: #1a1a1a;
+    padding:0 10px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 30px;
+    overflow: hidden;
+}
+.content-list .list .top .tour{
+    float: right;
+    color:#fff;
+    font-weight: 700;
+}
+.content-list .list .midden{
+    height: 140px;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+}
+.content-list .list .midden>span{
+    height: 140px;
+    width: 33.33%;
+    float: left;
+}
+.content-list .list .midden span:first-child div,
+.content-list .list .midden span:last-child div{
+    margin: 25px auto 0;
+    height: 90px;
+    color: #fff;
+    font-size: 16px;
+}
+.content-list .list .midden span:first-child div img,
+.content-list .list .midden span:last-child div img{
+    /*border-radius: 50%  ;*/
+}
+.content-list .list .bottom{
+    height: 44px;
+    width: 100%;
+    background: #1a1a1a;
+}
+.content-list .list .bottom ul{
+    width: 100%;
+    height: 44px;
+}
+.content-list .list .bottom ul li{
+    width: 50%;
+    height: 44px;
+    line-height: 44px;
+    font-size: 12px;
+    color: #fff;
+    float: left;
+    position: relative;
+    padding-left: 17%;
+}
+.content-list .list .bottom ul li:first-child{
+    color: #666;
+}
+
+.content-list .list .bottom ul li:after{
+    width: 1px;
+    content: "";
+    height: 40px;
+    background: #666;
+    float: right;
+    display: block;
+    margin-top: 2px;
+    transform: scale(1,0.5);
+}
+.content-list .list .bottom ul li:last-child:after{
+    width: 0;
+}
+
+.content-list .list .bottom ul li:first-child span:first-child{
+    float: left;
+    height: 20px;
+    width: 20px;
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/liveplay.png");
+    background-size: 20px 20px ;
+    margin-top: 12px;
+    margin-right: 10px;
+}
+.content-list .list .bottom ul li:nth-child(2) span:first-child{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/tz@.png");
+    float: left;
+    height: 20px;
+    width: 20px;
+    background-size: 20px 20px ;
+    margin-top: 12px;
+    margin-right: 10px;
+}
+.content-list .list .bottom ul li:nth-child(3) span:first-child{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/tz@.png");
+    float: left;
+    height: 20px;
+    width: 20px;
+    background-size: 20px 20px ;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.content-list .list .midden .num div{
+    width: 85px;
+    height: 40px;
+    margin: 40px auto 0;
+}
+.content-list .list .midden .num div span{
+    height: 40px;
+    font-size: 30px;
+    color: #e0e000;
+    line-height: 40px;
+    float: left;
+    text-align: center;
+}
+.content-list .list .midden .num div span:first-child,
+.content-list .list .midden .num div span:last-child{
+    width: 30px;
+    line-height: 36px;
+    border: 1px solid #666;
+    border-radius: 2px;
+    background: #111;
+}
+.content-list .list .midden .num div span:nth-child(2){
+    width: 25px;
+    line-height:35px;
+}
+.content-list .list .midden p{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    height: 42px;
+    width: 100%;
+    overflow: hidden;
+    margin-top:-16px;
+}
+.content-list .list .midden .num p{
+    margin-top: 23px;
+    font-size: 12px;
+}
+/*.pop{*/
+    /*width: 100%;*/
+    /*background: rgba(0,0,0,0.8);*/
+    /*top: 50px;*/
+    /*display: none;*/
+    /*position: fixed;*/
+    /*z-index: 9999;*/
+/*}*/
+/*.pop .s-box{*/
+    /*width: 100%;*/
+    /*background: #ebebeb;*/
+    /*padding:0 10px 10px 10px;*/
+/*}*/
+/*.pop .s-box p{*/
+    /*text-align: center;*/
+    /*line-height: 50px;*/
+    /*font-size: 16px;*/
+    /*color: #333;*/
+/*}*/
+/*.pop .s-box ul{*/
+    /*overflow: hidden;*/
+/*}*/
+/*.pop .s-box li{*/
+    /*width: 48.5%;*/
+    /*height: 44px;*/
+    /*border-radius: 2px;*/
+    /*border: 1px solid #ccc;*/
+    /*padding: 10px;*/
+    /*float: left;*/
+    /*margin-bottom: 10px;*/
+    /*position: relative;*/
+/*}*/
+/*.pop .s-box li span{*/
+    /*width: 55%;*/
+    /*height: 22px;*/
+/*}*/
+/*.pop .s-box li.cur span{*/
+    /*color: #333;*/
+    /*width: 55%;*/
+/*}*/
+/*.pop .s-box li:first-child,*/
+/*.pop .s-box li:nth-child(7),*/
+/*.pop .s-box li:nth-child(9),*/
+/*.pop .s-box li:nth-child(11),*/
+/*.pop .s-box li:nth-child(13),*/
+/*.pop .s-box li:nth-child(15),*/
+/*.pop .s-box li:nth-child(5),*/
+/*.pop .s-box li:nth-child(3){*/
+    /*margin-right: 3%*/
+/*}*/
+/*.pop .s-box li img{*/
+    /*height: 20px;*/
+    /*float: left;*/
+    /*margin-right: 10px;*/
+/*}*/
+/*.pop .s-box li span:last-child{*/
+    /*float: right;*/
+    /*height: 20px;*/
+    /*width: 20px;*/
+    /*margin-right: 0;*/
+    /*background-image: url("/themes/simpleboot3/public/assets/images/dianjing/no-select.png");*/
+    /*background-size: 20px 20px;*/
+/*}*/
+/*.pop .s-box li.cur>span:last-child{*/
+    /*background-image: url("/themes/simpleboot3/public/assets/images/dianjing/select.png");*/
+    /*background-size: 20px 20px;*/
+/*}*/
+/*.pop .s-box li span{*/
+    /*float: left;*/
+    /*color: #ccc;*/
+    /*font-size: 12px;*/
+    /*line-height: 22px;*/
+/*}*/
+/*.pop .s-box .fitter{*/
+    /*height: 50px;*/
+    /*width: 100%;*/
+    /*padding: 10px 0;*/
+/*}*/
+/*.pop .s-box .fitter>span{*/
+    /*float: left;*/
+    /*margin:0 30px 0 0 ;*/
+    /*line-height: 30px;*/
+    /*font-size: 12px;*/
+/*}*/
+/*.pop .s-box .fitter .select_all .img{*/
+    /*float: left;*/
+    /*margin-top: 5px;*/
+    /*margin-right: 10px;*/
+    /*width: 20px;*/
+    /*height: 20px;*/
+    /*background:url("/themes/simpleboot3/public/assets/images/dianjing/no-select.png") ;*/
+    /*background-size: 20px 20px;*/
+/*}*/
+/*.pop .s-box .fitter .select_all.cur .img{*/
+    /*background:url("/themes/simpleboot3/public/assets/images/dianjing/select.png") ;*/
+    /*background-size: 20px 20px;*/
+/*}*/
+/*.pop .s-box .fitter .not_select_all .img{*/
+    /*float: left;*/
+    /*margin-top: 5px;*/
+    /*margin-right: 10px;*/
+    /*width: 20px;*/
+    /*height: 20px;*/
+    /*background:url("/themes/simpleboot3/public/assets/images/dianjing/no-select.png") ;*/
+    /*background-size: 20px 20px;*/
+/*}*/
+/*.pop .s-box .fitter .not_select_all.cur .img{*/
+    /*background:url("/themes/simpleboot3/public/assets/images/dianjing/select.png") ;*/
+    /*background-size: 20px 20px;*/
+/*}*/
+/*.pop .s-box .fitter>span:last-child{*/
+    /*float: right;*/
+    /*width: 80px;*/
+    /*height: 30px;*/
+    /*text-align: center;*/
+    /*background: #333;*/
+    /*border-radius: 3px;*/
+    /*color: #fff;*/
+    /*margin-left: 0;*/
+/*}*/
+/*.pop{
+    width: 100%;
+    top: 50px;
+    display: none;
+    position: absolute;
+    z-index: 999;
+}
+.pop .s-box{
+    width: 100%;
+    background: #ebebeb;
+    padding:0 10px 0 10px;
+    margin-bottom: 50px;
+}
+.pop .s-box p{
+    width: 100%;
+    height: 10px;
+}
+.pop .s-box ul{
+    overflow: hidden;
+}
+.pop .s-box li{
+    width: 48.5%;
+    height: 44px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    float: left;
+    margin-bottom: 10px;
+    position: relative;
+}
+.pop .s-box li span{
+    width: 55%;
+    height: 22px;
+}
+.pop .s-box li.cur span{
+    color: #333;
+    width: 55%;
+}
+.pop .s-box li:first-child,
+.pop .s-box li:nth-child(7),
+.pop .s-box li:nth-child(9),
+.pop .s-box li:nth-child(11),
+.pop .s-box li:nth-child(13),
+.pop .s-box li:nth-child(15),
+.pop .s-box li:nth-child(17),
+.pop .s-box li:nth-child(19),
+.pop .s-box li:nth-child(21),
+.pop .s-box li:nth-child(23),
+.pop .s-box li:nth-child(25),
+.pop .s-box li:nth-child(27),
+.pop .s-box li:nth-child(29),
+.pop .s-box li:nth-child(5),
+.pop .s-box li:nth-child(3){
+    margin-right: 3%
+}
+.pop .s-box li img{
+    height: 20px;
+    float: left;
+    margin-right: 10px;
+}
+.pop .s-box li:first-child.cur img{
+
+}
+.pop .s-box li span:last-child{
+    float: right;
+    height: 20px;
+    width: 20px;
+    margin-right: 0;
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/no-select.png");
+    background-size: 20px 20px;
+}
+.pop .s-box li.cur>span:last-child{
+    background-image: url("/themes/simpleboot3/public/assets/images/dianjing/select.png");
+    background-size: 20px 20px;
+}
+.pop .s-box li span{
+    float: left;
+    color: #ccc;
+    font-size: 12px;
+    line-height: 22px;
+}
+.pop .s-box .fitter{
+    height: 50px;
+    width: 100%;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    margin-left: -10px;
+    padding-left: 10px;
+}
+.pop .s-box .fitter>span{
+    float: left;
+    margin:0 30px 0 0 ;
+    line-height: 30px;
+    font-size: 12px;
+}
+.pop .s-box .fitter .select_all .img{
+    float: left;
+    margin-top: 5px;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    background:url("/themes/simpleboot3/public/assets/images/dianjing/no-select.png") ;
+    background-size: 20px 20px;
+}
+.pop .s-box .fitter .select_all.cur .img{
+    background:url("/themes/simpleboot3/public/assets/images/dianjing/select.png") ;
+    background-size: 20px 20px;
+}
+.pop .s-box .fitter .select_all.cur span{
+    color: #333;
+}
+.pop .s-box .fitter .not_select_all .img{
+    float: left;
+    margin-top: 5px;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    background:url("/themes/simpleboot3/public/assets/images/dianjing/no-select.png") ;
+    background-size: 20px 20px;
+}
+.pop .s-box .fitter .not_select_all.cur .img{
+    background:url("/themes/simpleboot3/public/assets/images/dianjing/select.png") ;
+    background-size: 20px 20px;
+}
+.pop .s-box .fitter .not_select_all.cur span{
+    color: #333;
+}
+.pop .s-box .fitter>span:last-child{
+    float: right;
+    width: 80px;
+    margin-right: 10px;
+    height: 30px;
+    text-align: center;
+    background: #333;
+    border-radius: 3px;
+    color: #fff;
+    margin-left: 0;
+}*/
+.nogame>img{
+    width: 20%;
+}
+.footer{
+    height: 49px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+}
+.footer ul{
+    width: 100%;
+}
+.footer ul li{
+    float: left;
+    width: 25%;
+    height: 49px;
+}
+.footer ul li>span{
+    display: block;
+    margin: 0 auto;
+    height: 49px;
+    width: 30px;
+}
+.footer ul li>span>span{
+    display: block;
+    height: 25px;
+    width: 25px;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+}
+.footer ul li:first-child>span>span{
+    background-image:url("/themes/simpleboot3/public/assets/images/dianjing/zx.png");
+}
+.footer ul li:nth-child(2)>span>span{
+    background-image:url("/themes/simpleboot3/public/assets/images/dianjing/sj.png");
+}
+.footer ul li:nth-child(3)>span>span{
+    background-image:url("/themes/simpleboot3/public/assets/images/dianjing/jc.png");
+}
+.footer ul li:nth-child(4)>span>span{
+    background-image:url("/themes/simpleboot3/public/assets/images/dianjing/gr.png");
+}
+.footer ul li.cur:first-child>span>span{
+    background-image:url("/themes/simpleboot3/public/assets/images/dianjing/zx@.png");
+}
+.footer ul li.cur:nth-child(2)>span>span{
+    background-image:url("/themes/simpleboot3/public/assets/images/dianjing/sj@.png");
+}
+.footer ul li.cur:nth-child(3)>span>span{
+    background-image:url("/themes/simpleboot3/public/assets/images/dianjing/jc@.png");
+}
+.footer ul li.cur:nth-child(4)>span>span{
+    background-image:url("/themes/simpleboot3/public/assets/images/dianjing/gr@.png");
+}
+.footer ul li>span>p{
+    font-size: 12px;
+    color: #474747;
+    line-height: 25px;
+    text-align: center;
+}
+.footer ul li.cur>span>p{
+    color: #e0e000;
+}
+.gold{
+    background:rgba(0,0,0,0.8);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+}
+.gold .g-bg{
+    background: url("/themes/simpleboot3/public/assets/images/dianjing/10000gold.png") no-repeat;
+    background-size: 100% 100%;
+    height: 364px;
+    width: 100%;
+    margin-top: 135px;
+    position: relative;
+}
+.gold .g-bg .get{
+    text-align: center;
+    width: 180px;
+    height: 44px;
+    background: #fff;
+    border-radius: 22px ;
+    line-height: 44px;
+    position: absolute;
+    bottom: 20% ;
+    left: 50%;
+    margin-left: -90px ;
+    color: #d72c1a;
+    font-size: 20px;
+}
+
+.gold .g-close{
+    display: block;
+    margin: 0 auto;
+    height: 30px;
+    width: 30px;
+}

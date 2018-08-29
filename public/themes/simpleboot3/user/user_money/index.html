@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>个人中心 {$site_info.site_name|default=''}</title>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <include file="public@head"/>
+    <link rel="stylesheet" href="__TMPL__/public/assets/css/dianjing/user_list.css" >
+</head>
+<body>
+<div id="body" v-cloak>
+    <div class="header">
+        <a  href="javascript:void(0)" onclick="javascript:history.go(-1);return false;" >
+            <img src="__TMPL__/public/assets/images/dianjing/back.png" ></a>
+        账户记录
+    </div>
+    <div class="tab">
+        <ul  id="toggle">
+            <li class="cur">钻石记录</li>
+            <li>金币记录</li>
+        </ul>
+    </div>
+    <div class="content dia">
+        <p class="title">
+            <span>编号</span>
+            <span>时间</span>
+            <span>摘要</span>
+            <span>钻石交易</span>
+            <span>钻石余额</span>
+        </p>
+        <ul>
+            <empty name="diamond">
+                <li v-if="gold==''" style="text-align: center;color: #c4caff;line-height: 60px;font-size: 12px">暂无交易记录</li>
+                <else/>
+                <volist name="diamond" id="vo">
+                    <li v-for="x in diamond">
+                        <span style="line-height: 16px;margin-top: 14px;word-break: break-all;overflow: hidden">{:$vo.id}</span>
+                        <span style="line-height: 16px;margin-top: 14px;">{:date('Y-m-d H:i:s',$vo['time'])}</span>
+                        <span style="color: #333">{:$vo.test}</span>
+                        <switch name="vo['type']">
+                            <case value="1">
+                                <span style="color: red;" v-show="x.uin!='0.00'">+{:$vo.number}</span>
+                            </case>
+                            <case value="2">
+                                <span style="color: green;" v-show="x.uout!='0.00'">-{:$vo.number}</span>
+                            </case>
+                            <default/>
+
+                        </switch>
+
+
+                        <span style="color: #333;">{:$vo.balance}</span>
+                    </li>
+                </volist>
+            </empty>
+        </ul>
+        <!--<p style="text-align: center;color: #333;line-height: 40px;font-size: 12px" @click="more" class="more" >加载更多</p>-->
+    </div>
+    <div class="content  gol" style="display: none">
+        <p class="title">
+            <span>编号</span>
+            <span>时间</span>
+            <span>摘要</span>
+            <span>金币交易</span>
+            <span>金币余额</span>
+        </p>
+        <ul>
+            <empty name="gold">
+                <li v-if="gold==''" style="text-align: center;color: #c4caff;line-height: 60px;font-size: 12px">暂无交易记录</li>
+                <else/>
+                <volist name="gold" id="vo">
+                    <li v-for="x in gold">
+                        <span style="line-height: 16px;margin-top: 14px;word-break: break-all;overflow: hidden">{:$vo.id}</span>
+                        <span style="line-height: 16px;margin-top: 14px;">{:date('Y-m-d H:i:s',$vo['time'])}</span>
+                        <span style="color: #333">{:$vo.test}</span>
+                        <switch name="vo['type']">
+                            <case value="1">
+                                <span style="color: red;">+{:$vo.number}</span>
+                            </case>
+                            <case value="2">
+                                <span style="color: green;">-{:$vo.number}</span>
+                            </case>
+                            <default/>
+
+                        </switch>
+                        <span style="color: #333;">{:$vo.balance}</span>
+                    </li>
+                </volist>
+            </empty>
+
+        </ul>
+        <!--<p style="text-align: center;color: #333;line-height: 40px;font-size: 12px" @click="more1" class="more1">加载更多</p>-->
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        var li   = $('#toggle').children();
+        var list = $('.content');
+        li.click(function () {
+            li.removeClass('cur');
+            $(this).addClass('cur');
+            var id = li.index(this);
+            list.css('display','none');
+            list.eq(id).css('display','block')
+        })
+    })
+</script>
+</body>
+</html>

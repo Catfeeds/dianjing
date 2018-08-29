@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>个人中心 {$site_info.site_name|default=''}</title>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <include file="public@head"/>
+    <link rel="stylesheet" href="__TMPL__/public/assets/css/dianjing/my_guess.css" >
+</head>
+<body>
+<div id="body">
+    <div class="header">
+        <a href="{:cmf_url('personal/index')}" >
+            <img src="__TMPL__/public/assets/images/dianjing/back.png"></a>
+        我的竞猜
+    </div>
+    <div class="tab">
+        <ul  id="toggle">
+            <li class="{:$id==0?'cur':''}" url="{:cmf_url('MyGuess/index',array('id'=>0))}">全部</li>
+            <li class="{:$id==1?'cur':''}" url="{:cmf_url('MyGuess/index',array('id'=>1))}">待开奖</li>
+            <li class="{:$id==2?'cur':''}" url="{:cmf_url('MyGuess/index',array('id'=>2))}">已中奖</li>
+            <li class="{:$id==3?'cur':''}" url="{:cmf_url('MyGuess/index',array('id'=>3))}">未中奖</li>
+        </ul>
+    </div>
+    <div class="content" v-cloak>
+        <ul>
+            <empty name="data">
+
+                <li class=" all" style="text-align: center;line-height: 50px;margin-top: 100px;background: #ebebeb">
+                    <img src="__TMPL__/public/assets/images/dianjing/no_list.png" style="height: 100px;color: #333;">
+                    <br>暂无记录
+                    <p style=" width: 80px;height: 30px;line-height: 30px;text-align: center;margin: 0 auto;background: #333;color: #fff; border-radius: 2px;margin-top: 30px" id="jump">去竞猜</p>
+                </li>
+
+                <else/>
+                <volist name="data" id="vo">
+                    <li v-for="x in all">
+                        <p class="c-h">
+                            <span style="font-size: 12px">{:$i}</span>
+                            <span>{:date('Y-m-d H:i:s',$vo['time'])}</span>
+                        </p>
+
+                        <p class="c-r">
+                            <span>{:$vo.bureau_name} <br> {:$vo.choice_parent_name} @ {:empty($vo['choice_a'])?$vo['choice_name']:$vo['choice_a']}</span>
+                            <switch name="vo['status']">
+                                <case value="1">
+                                    <span style="color: #999;">待开奖</span>
+                                </case>
+                                <case value="2">
+                                    <span style="color: #d41714;">中奖</span>
+                                </case>
+                                <case value="3">
+                                    <span style="color: #1aad13;">未中奖</span>
+                                </case>
+                                <default/>
+                                <span  style="color: #999;">取消</span>
+                            </switch>
+                        </p>
+
+                        <p class="c-p">
+                            <span>投注金币 {:$vo.number}</span>
+                            <span style="float: right">
+                        <span style="font-weight: 700">返还金币</span>
+                               <switch name="vo['status']">
+                                <case value="1">
+                                    <span style="color: #999;">{:$vo['odds']*$vo['number']}</span>
+                                </case>
+                                <case value="2">
+                                    <span style="color: #d41714;font-weight: 700">{:$vo['odds']*$vo['number']}</span>
+                                </case>
+                                <case value="3">
+                                    <span style="color: #1aad13;font-weight: 700">0</span>
+                                </case>
+                                <default/>
+                                <span  style="color: #999;">{:$vo.number}</span>
+                            </switch>
+                       <!-- <span v-if="x.order_status_text=='中奖'" style="color: #d41714;font-weight: 700">{{x.order_result}}</span>
+                        <span v-if="x.order_status_text=='未中奖'" style="color: #1aad13;font-weight: 700">{{x.order_result}}</span>
+                        <span v-if="x.order_status_text=='待开奖'" style="color: #999;">{{x.order_result}}</span>
+                        <span v-if="x.order_status_text=='取消'" style="color: #999;">{{x.order_result}}</span>-->
+                    </span>
+                        </p>
+
+                        <p style="line-height: 30px;font-size: 12px;color: #999;padding-left: 10px;overflow: hidden;height: 30px;">
+                            {:$vo.Aname} vs {:$vo.Bname} | {:$vo.classify_name} | {:date('Y-m-d H:i:s',$vo['startTime'])}
+                        </p>
+
+                    </li>
+                </volist>
+
+            </empty>
+
+
+            <!--<div v-show="all.length==10" style="height: 50px;width: 100%;line-height: 50px;font-size: 12px;color: #333;text-align: center" @click="more1">加载更多</div>
+            <div v-show="all.length==20" style="height: 50px;width: 100%;line-height: 50px;font-size: 12px;color: #333;text-align: center" @click="more1">加载更多</div>
+            <div v-show="all.length==30" style="height: 50px;width: 100%;line-height: 50px;font-size: 12px;color: #333;text-align: center" @click="more1">加载更多</div>
+            <div v-show="all.length==40" style="height: 50px;width: 100%;line-height: 50px;font-size: 12px;color: #333;text-align: center" @click="more1">加载更多</div>
+            <div v-show="all.length==50" style="height: 50px;width: 100%;line-height: 50px;font-size: 12px;color: #333;text-align: center" @click="more1">加载更多</div>
+            <div v-show="all.length==60" style="height: 50px;width: 100%;line-height: 50px;font-size: 12px;color: #333;text-align: center" @click="more1">加载更多</div>-->
+
+        </ul>
+        <div class="pagination">{$page|default=''}</div>
+    </div>
+</div>
+<script>
+    $('#jump').click(function () {
+        window.location.href="{:cmf_url('portal/Index/index')}"
+    });
+    $('#toggle').children().click(function () {
+        var url  = $(this).attr('url');
+        window.location.href = url;
+    })
+
+</script>
+</body>
+</html>

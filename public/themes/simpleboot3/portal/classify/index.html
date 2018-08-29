@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>首页 {$site_info.site_name|default=''}</title>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <include file="public@head"/>
+    <style>
+        body,h1,h2,h3,h4,p,div,li,ul,table,td,tr,span,a,dl,dt,dd,input,thead,tbody,footer,aside,header{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            list-style: none;
+            font-family: "Microsoft Yahei", "微软雅黑", "宋体", Tahoma, Arial, Helvetica, STHeiti;
+        }
+        body{
+            background-image: url("__TMPL__/public/assets/images/dianjing/bgpic.jpg");
+            background-attachment: fixed;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+        }
+        .header{
+            height: 50px;
+            width: 100%;
+            background: #1a1a1a;
+            text-align: center;
+            line-height: 44px;
+            color: #fff;
+            font-weight: 700;
+            position: fixed;
+            top:0;
+            z-index: 9999;
+        }
+        .header a img{
+            margin-top: 16px;
+            margin-left: 10px;
+            width: 10px;
+            float: left;
+        }
+        .pop{
+            width: 100%;
+            top: 50px;
+            display: none;
+            position: absolute;
+            z-index: 999;
+        }
+        .pop .s-box{
+            width: 100%;
+            background: #ebebeb;
+            padding:0 10px 0 10px;
+            margin-bottom: 50px;
+        }
+        .pop .s-box p{
+            width: 100%;
+            height: 10px;
+        }
+        .pop .s-box ul{
+            overflow: hidden;
+        }
+        .pop .s-box li{
+            width: 48.5%;
+            height: 44px;
+            border-radius: 2px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            float: left;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .pop .s-box li span{
+            width: 55%;
+            height: 22px;
+        }
+        .pop .s-box li.cur span{
+            color: #333;
+            width: 55%;
+        }
+        .pop .s-box li:first-child,
+        .pop .s-box li:nth-child(7),
+        .pop .s-box li:nth-child(9),
+        .pop .s-box li:nth-child(11),
+        .pop .s-box li:nth-child(13),
+        .pop .s-box li:nth-child(15),
+        .pop .s-box li:nth-child(17),
+        .pop .s-box li:nth-child(19),
+        .pop .s-box li:nth-child(21),
+        .pop .s-box li:nth-child(23),
+        .pop .s-box li:nth-child(25),
+        .pop .s-box li:nth-child(27),
+        .pop .s-box li:nth-child(29),
+        .pop .s-box li:nth-child(5),
+        .pop .s-box li:nth-child(3){
+            margin-right: 3%
+        }
+        .pop .s-box li img{
+            height: 20px;
+            float: left;
+            margin-right: 10px;
+        }
+        .pop .s-box li:first-child.cur img{
+
+        }
+        .pop .s-box li span:last-child{
+            float: right;
+            height: 20px;
+            width: 20px;
+            margin-right: 0;
+            background-image: url("__TMPL__/public/assets/images/dianjing/no-select.png");
+            background-size: 20px 20px;
+        }
+        .pop .s-box li.cur>span:last-child{
+            background-image: url("__TMPL__/public/assets/images/dianjing/select.png");
+            background-size: 20px 20px;
+        }
+        .pop .s-box li span{
+            float: left;
+            color: #ccc;
+            font-size: 12px;
+            line-height: 22px;
+        }
+        .pop .s-box .fitter{
+            height: 50px;
+            width: 100%;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            background: #fff;
+            margin-left: -10px;
+            padding-left: 10px;
+        }
+        .pop .s-box .fitter>span{
+            float: left;
+            margin:0 30px 0 0 ;
+            line-height: 30px;
+            font-size: 12px;
+        }
+        .pop .s-box .fitter .select_all .img{
+            float: left;
+            margin-top: 5px;
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            background:url("__TMPL__/public/assets/images/dianjing/no-select.png") ;
+            background-size: 20px 20px;
+        }
+        .pop .s-box .fitter .select_all.cur .img{
+            background:url("__TMPL__/public/assets/images/dianjing/select.png") ;
+            background-size: 20px 20px;
+        }
+        .pop .s-box .fitter .select_all.cur span{
+            color: #333;
+        }
+        .pop .s-box .fitter .not_select_all .img{
+            float: left;
+            margin-top: 5px;
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            background:url("__TMPL__/public/assets/images/dianjing/no-select.png") ;
+            background-size: 20px 20px;
+        }
+        .pop .s-box .fitter .not_select_all.cur .img{
+            background:url("__TMPL__/public/assets/images/dianjing/select.png") ;
+            background-size: 20px 20px;
+        }
+        .pop .s-box .fitter .not_select_all.cur span{
+            color: #333;
+        }
+        #submit{
+            float: right;
+            width: 80px;
+            margin-right: 10px;
+            height: 30px;
+            text-align: center;
+            background: #333;
+            border-radius: 3px;
+            color: #fff;
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="body">
+    <div class="header">
+        <img src="__TMPL__/public/assets/images/dianjing/leidaegames.png"  style="height: 20px;margin-top: 15px;margin-left: 40px">
+        <div style="height: 50px;width: 40px;float: right" >
+            <img src="__TMPL__/public/assets/images/dianjing/tc.png" style="height: 20px;width: 20px;margin: 15px 0 0 ">
+        </div>
+    </div>
+    <form action="{:cmf_url('Classify/save')}" method="post" class="js-ajax-form">
+    <div class="pop" id="pop" style="background: rgb(235, 235, 235); display: block; height: 943px;">
+        <div class="s-box">
+            <p></p>
+            <ul @click="toggle_game" class="toggle">
+                <notempty name="classify">
+                    <volist name="classify" id="vo">
+                        <input type="number" name="classify_id[{:$vo.id}]"  value="{:empty($vo['status'])?1:$vo['status'];}" style="display: none">
+                        <empty name="vo['status']">
+                            <php>$class = 'cur';</php>
+                            <else/>
+                            <switch name="vo['status']">
+                                <case value="1">
+                                    <php>$class = 'cur';</php>
+                                </case>
+                                <default/>
+                                <php>$class = '';</php>
+                            </switch>
+                        </empty>
+                        <li class="{:$class} classify_id"  data-game-id="{:$vo.id}">
+                            <img src="{:$vo.icon}" style="margin: 2px 10px 0 0; width: 20px;height: auto;">
+                            <span style="overflow: hidden">{:$vo.name} <!--(0)--></span>
+                            <span></span>
+                        </li>
+                    </volist>
+                </notempty>
+            </ul>
+            <div class="fitter">
+            <!--<span @click="select_all" class="select_all">
+                <span class="img"></span>
+                <span>全选</span>
+            </span>
+                <span @click="not_select_all" class="not_select_all">
+                <span class="img">
+                </span>
+                <span>反选</span>
+            </span>-->
+                <button type="submit" id="submit" class="js-ajax-submit" >确定</button>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+    $('.classify_id').click(function () {
+        var prev = $(this).prev();
+        if (prev.val() == 1)
+        {
+            $(this).removeClass('cur');
+            prev.val(2)
+        }
+        else
+        {
+            $(this).addClass('cur');
+            prev.val(1)
+        }
+
+
+    })
+</script>
+</body>
+</html>

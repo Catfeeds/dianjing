@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>首页 {$site_info.site_name|default=''}</title>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <include file="public@head"/>
+    <link rel="stylesheet" href="__TMPL__/public/assets/css/dianjing/common_black.css">
+    <link rel="stylesheet" href="__TMPL__/public/assets/css/dianjing/login_black.css">
+</head>
+<body>
+<div id="body" style="padding-top: 50px">
+    <div class="header">
+        <a href="{:cmf_url('portal/index/index')}" style="-webkit-tap-highlight-color:rgba(0,0,0,0);"><img src="__TMPL__/public/assets/images/dianjing/back.png" alt=""></a>
+        <p>登陆</p>
+    </div>
+    <div class="logo">
+        <img src="__TMPL__/public/assets/images/dianjing/leida_logo_white.png" alt="">
+    </div>
+    <form action="{:cmf_url('login/doLogin')}" method="post" class="js-ajax-form">
+
+
+    <div class="login">
+        <div class="phone">
+            <span><img src="__TMPL__/public/assets/images/dianjing/iphoney.png" alt=""></span>
+            <span><input type="text" placeholder="请输入手机号" name="username"></span>
+        </div>
+        <div class="password">
+            <span><img src="__TMPL__/public/assets/images/dianjing/passy.png" alt=""></span>
+            <span><input class="setPW" name="password" type="password" placeholder="请输入密码"></span>
+            <span class="off_on"><img src="__TMPL__/public/assets/images/dianjing/off_white.png" alt=""></span>
+        </div>
+        <div class="phone">
+            <span></span>
+            <span><input type="text" name="captcha" placeholder="请输入验证码" ></span>
+
+        </div>
+        <div class="phone">
+            <span></span>
+            <span><captcha height="38" width="160" font-size="20"/></span>
+        </div>
+        <div class="flag"></div>
+        <div class="pass hidden">登录</div>
+        <button type="submit" class="pass1 js-ajax-submit">登录</button>
+    </div>
+
+    </form>
+    <p class="forget">
+        <span><a style="color: #fff;text-decoration: none" href="{:cmf_url('user/Login/findPassword')}">忘记密码</a></span>
+        <span></span>
+        <span><a style="color: #fff;text-decoration: none" href="{:cmf_url('user/Register/index')}">点击注册</a></span>
+    </p>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

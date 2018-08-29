@@ -1,0 +1,264 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a>{$title}</a></li>
+        <li> <a  href='javaScript:' id="add">添加{$title}</a></li>
+    </ul>
+    <form action="{:cmf_url($controller.'/sort')}" method="post" class="margin-top-20">
+        <table class="table table-hover table-bordered table-list" id="menus-table">
+            <thead>
+            <tr class="success">
+                <th width="80">{:lang('SORT')}</th>
+                <th width="10%">序号</th>
+                <th width="15%">{:lang('NAME')}</th>
+                <th width="15%">图标</th>
+                <th width="15%">创建时间</th>
+                <th width="15%">状态</th>
+                <th width="15%">{:lang('ACTIONS')}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {$category}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td width="80"><button type="submit" value="排序" class="js-ajax-submit btn btn-success">排序</button></td>
+                <td colspan="6"></td>
+            </tr>
+            </tfoot>
+        </table>
+    </form>
+</div>
+
+
+<!--添加弹窗-->
+<div class="modal fade"  id="myModal"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="myModalLabel">
+
+    <div class="modal-dialog"
+         role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"><span
+                        aria-hidden="true">×</span></button>
+
+                <h4 class="modal-title">添加{$title}</h4>
+
+            </div>
+
+            <form action="{:url($controller.'/addPost')}" method="post" class="js-ajax-form">
+
+                <div class="modal-body">
+
+                    <div class="form-group">
+
+                        <label for="name">名称</label>
+
+                        <input type="text"
+                               name="name"
+                               class="form-control"
+                               id="name"
+                               placeholder="名称" required>
+
+                    </div>
+                    <div class="form-group danger">
+
+                        <label for="icon">图标</label>
+
+                        <input type="hidden" class="form-control" id="icon" name="icon" required>
+                        <a href="javascript:uploadOneImage('图片上传','#icon');">
+                            <img src="__TMPL__/public/assets/images/default-thumbnail.png"
+                                 id="icon-preview"
+                                 width="70" style="cursor: pointer;background-color: yellow"/>
+                        </a>
+
+                    </div>
+                    <div class="form-group">
+
+                        <label for="parent_id">上一级</label>
+                        <select name="parent_id"
+                                class="form-control"
+                                id="parent_id"
+                                required>
+                            <option value="0">作为第一级</option>
+                            <notempty name="parent">
+                                <volist name="parent" id="vo">
+                                    <option value="{:$vo.id}">{:$vo.name}</option>
+                                </volist>
+                            </notempty>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button"
+                            class="btn btn-default"  data-dismiss="modal">
+                        <!--<span
+                            class="glyphicon glyphicon-remove"  aria-hidden="true"></span>-->
+                        关闭</button>
+                    <button type="submit"
+                            class="btn btn-primary  js-ajax-submit" >
+							<span class="glyphicon glyphicon-floppy-disk"  aria-hidden="true">
+
+							</span>
+                        添加
+                    </button>
+
+                </div>
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+</div>
+<!--添加弹窗-->
+
+
+<!--修改弹窗-->
+<div class="modal fade"  id="myModal2"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="myModalLabel">
+
+    <div class="modal-dialog"
+         role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"><span
+                        aria-hidden="true">×</span></button>
+
+                <h4 class="modal-title">修改{$title}</h4>
+
+            </div>
+
+            <form action="{:url($controller.'/editPost')}" method="post" class="js-ajax-form">
+                <input type="hidden" name="id" id="payment_id">
+                <div class="modal-body">
+
+                    <div class="form-group">
+
+                        <label for="payment_name">名称</label>
+
+                        <input type="text"
+                               name="name"
+                               class="form-control"
+                               id="payment_name"
+                               placeholder="名称">
+
+                    </div>
+                    <div class="form-group">
+
+                        <label for="icon">图标</label>
+
+                        <input type="hidden" class="form-control" id="change" name="icon" required>
+                        <a href="javascript:uploadOneImage('图片上传','#change');">
+                            <img src="__TMPL__/public/assets/images/default-thumbnail.png"
+                                 id="change-preview"
+                                 width="70" style="cursor: pointer;background-color: yellow"/>
+                        </a>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="payment_pid">上一级</label>
+                        <select name="parent_id"
+                                class="form-control"
+                                id="payment_pid"
+                                required>
+                            <option value="0">作为第一级</option>
+                            <notempty name="parent">
+                                <volist name="parent" id="vo">
+                                    <option value="{:$vo.id}">{:$vo.name}</option>
+                                </volist>
+                            </notempty>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button"
+                            class="btn btn-default"  data-dismiss="modal">
+                        <!--<span
+                            class="glyphicon glyphicon-remove"  aria-hidden="true"></span>-->
+                        关闭</button>
+                    <button type="submit"
+                            class="btn btn-primary  js-ajax-submit" >
+							<span class="glyphicon glyphicon-floppy-disk"  aria-hidden="true">
+
+							</span>
+                        修改
+                    </button>
+
+                </div>
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+</div>
+<!--修改弹窗-->
+
+<script src="__STATIC__/js/admin.js"></script>
+
+
+<script>
+    $(document).ready(function() {
+        Wind.css('treeTable');
+        Wind.use('treeTable', function() {
+            $("#menus-table").treeTable({
+                indent : 20
+            });
+        });
+
+    });
+</script>
+
+
+<script>
+    $("#add").click(function () {
+        $('#myModal').modal();
+    });
+
+    $('[name="change"]').click(function () {
+        var thisTd =  $(this).parent();
+        $('#payment_id').val(thisTd.next().val());
+        $('#payment_name').val(thisTd.parent().children().eq(1).text());
+        var img = thisTd.parent().children().eq(2).children().eq(0).prop('src');
+        $('#change').val(img);
+        $('#change-preview').prop('src',img);
+        var parent_id = thisTd.next().next().val();
+        $('#payment_pid').val(parent_id);
+        $('#myModal2').modal();
+    });
+    
+
+</script>
+</body>
+</html>

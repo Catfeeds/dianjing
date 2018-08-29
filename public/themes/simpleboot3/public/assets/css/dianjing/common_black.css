@@ -1,0 +1,41 @@
+body,h1,h2,h3,h4,p,div,li,ul,table,td,tr,span,a,dl,dt,dd,input,thead,tbody,footer,aside,header{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    list-style: none;
+    font-family: "Microsoft Yahei",  "微软雅黑", "宋体", Tahoma, Arial, Helvetica, STHeiti;
+}
+body{
+    background: #f5f5f5;
+}
+.header{
+    height: 50px;
+    width: 100%;
+    background: #1a1a1a;
+    position: fixed;
+    top:0;
+}
+.header a{
+    position: absolute;
+    top:0;
+}
+.header img{
+    height: 20px;
+    margin-top: 14px;
+    margin-left: 10px;
+}
+.header p{
+    color: #fff;
+    line-height: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+.logo img{
+    height: 70px;
+    display: block;
+    margin:  60px auto;
+
+}

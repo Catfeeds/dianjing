@@ -1,0 +1,91 @@
+<include file="public@header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:url($controller.'/index')}">竞猜列表</a></li>
+			<li class="active"><a>添加竞猜</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:url($controller.'/addPost')}">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">
+					名称
+					<span class="form-required">*</span>
+				</label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" name="name" class="form-control" placeholder="请输入名称" required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">
+					赛事
+					<span class="form-required">*</span>
+				</label>
+				<div class="col-md-6 col-sm-10">
+					<select name="match_id" class="form-control" >
+						<option value="">请选择</option>
+						<notempty name="data">
+							<volist name="data" id="vo">
+								<option value="{:$vo.id}">{:$vo.match_code}</option>
+							</volist>
+						</notempty>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">
+					分组
+					<span class="form-required">*</span>
+				</label>
+				<div class="col-md-6 col-sm-10">
+					<select name="choice_id" class="form-control" >
+						<option value="">请选择</option>
+						{:$selectCategory}
+					</select>
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">
+					局
+					<span class="form-required">*</span>
+				</label>
+				<div class="col-md-6 col-sm-10">
+					<select name="bureau_id" class="form-control" >
+						<option value="">请选择</option>
+						<notempty name="$bureau">
+							<volist name="$bureau" id="vo">
+								<option value="{:$vo.id}">{:$vo.name}</option>
+							</volist>
+						</notempty>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">
+					赔率
+					<span class="form-required">*</span>
+				</label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" name="odds" class="form-control" placeholder="请输入赔率" required>
+				</div>
+			</div>
+
+
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-primary js-ajax-submit">{:lang('ADD')}</button>
+					<a class="btn btn-default" href="javascript:history.back(-1);">{:lang('BACK')}</a>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="__STATIC__/js/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<include file="public@header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:url('Currency/index')}">虚拟币列表</a></li>
+			<li><a href="{:url('Currency/add')}">添加虚拟币</a></li>
+			<li class="active"><a>编辑虚拟币</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:url('Currency/editPost')}">
+			<div class="form-group">
+				<label for="input-title" class="col-sm-2 control-label">名称<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-title" name="title" required value="{:$data.title}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="thumbnail" class="col-sm-2 control-label">图标<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<input type="hidden" class="form-control" id="thumbnail" name="icon" required value="{:$data.icon}">
+					<a href="javascript:uploadOneImage('图片上传','#thumbnail');">
+						<img src="{:empty($data['icon'])?'__TMPL__/public/assets/images/default-thumbnail.png':$data['icon']}"
+							 id="thumbnail-preview"
+							 width="70" style="cursor: pointer"/>
+					</a>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-ratio" class="col-sm-2 control-label">换算比例<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-ratio" name="ratio" placeholder="请按百分比计算，例如：20 则是 20%" required value="{:$data.ratio}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-ratio_id" class="col-sm-2 control-label">换算对象<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<select class="form-control" name="ratio_id" id="input-ratio_id" required>
+						<option value="0" {$data['ratio_id']==0 ? 'selected' : ''}>人民币</option>
+						<notempty name="ratio_id">
+							<volist name="ratio_id" id="vo">
+								<option value="{$vo.id}" {$data['ratio_id']==$vo['id'] ? 'selected' : ''}>
+									{$vo.title}
+								</option>
+							</volist>
+						</notempty>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<input type="hidden" name="id" value="{$data.id}">
+					<button type="submit" class="btn btn-primary js-ajax-submit">{:lang('SAVE')}</button>
+					<a class="btn btn-default" href="{:url('Currency/index')}">{:lang('BACK')}</a>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

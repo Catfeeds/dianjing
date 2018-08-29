@@ -1,0 +1,123 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a>竞猜列表</a></li>
+        <li><a href="{:url($controller.'/add')}">添加竞猜</a></li>
+    </ul>
+    <form class="well form-inline margin-top-20" method="post" action="{:url($controller.'/index')}">
+        <!--参赛战队:
+        <input type="text" class="form-control" name="name" style="width: 120px;" value="{:input('request.name')}" placeholder="请输入战队名称">-->
+        <input type="submit" class="btn btn-primary" value="搜索" />
+        <a class="btn btn-danger" href="{:url($controller.'/index')}">清空</a>
+    </form>
+    <form action="" method="post" class="margin-top-20">
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th width="60">序号</th>
+                <th width="10%">赛事编号</th>
+                <th width="60">竞猜名称</th>
+                <th width="60">局名称</th>
+                <th width="60">竞选分组</th>
+                <th width="60">竞选选项</th>
+                <th width="60">赔率</th>
+                <th width="60">结果</th>
+                <th width="60">状态</th>
+                <th width="150">{:lang('ACTIONS')}</th>
+            </tr>
+            </thead>
+            <tbody>
+                <notempty name="data">
+                    <volist name="data" id="vo">
+                        <tr>
+                            <td>{:$i}</td>
+                            <td>{:$vo.match_code}</td>
+                            <td>{:$vo.name}</td>
+                            <td>{:$vo.bureau_name}</td>
+                            <td>{:$vo.parent_name}</td>
+                            <td>{:$vo.choice_name}</td>
+                            <td>{:$vo.odds}</td>
+                            <td>
+                                <switch name="vo['choice']">
+                                    <case value="1">
+                                        还未揭晓
+                                        <span style="float: right">
+                                             <a class="js-ajax-dialog-btn"
+                                                data-msg="你确定中"
+                                                href="{:url($controller.'/update',array('id'=>$vo['id'],'choice'=>2))}">中</a>
+                                        <a class="js-ajax-dialog-btn"
+                                           data-msg="你确定中"
+                                           href="{:url($controller.'/update',array('id'=>$vo['id'],'choice'=>3))}">未中</a>
+                                        </span>
+
+                                    </case>
+                                    <case value="2">
+                                        中
+                                        <!--<span style="float: right">
+
+                                        <a class="js-ajax-dialog-btn"
+                                           data-msg="你确定中"
+                                           href="{:url($controller.'/choice',array('id'=>$vo['id'],'status'=>3))}">未中</a>
+                                        </span>-->
+
+                                    </case>
+                                    <case value="3">
+                                        未中
+                                        <!--<span style="float: right">
+                                             <a class="js-ajax-dialog-btn"
+                                                data-msg="你确定中"
+                                                href="{:url($controller.'/choice',array('id'=>$vo['id'],'status'=>2))}">中</a>
+
+                                        </span>-->
+
+                                    </case>
+                                    <default/>
+                                    未知结果
+                                </switch>
+                            </td>
+                            <td>
+                                <switch name="vo.status">
+                                    <case value="1">
+                                        {:lang('ENABLED')}
+                                    </case>
+                                    <case value="2">
+                                        {:lang('DISABLED')}
+                                    </case>
+                                    <default/>
+                                    未知状态
+                                </switch>
+                            </td>
+                            <td>
+                                <switch name="vo.status">
+                                    <case value="1">
+                                        <a class="js-ajax-dialog-btn"
+                                           data-msg="你确定要{:lang('DISABLED')}"
+                                           href="{:url($controller.'/update',array('id'=>$vo['id'],'status'=>2))}">{:lang('DISABLED')}</a>
+                                    </case>
+                                    <case value="2">
+                                        <a class="js-ajax-dialog-btn"
+                                           data-msg="你确定要{:lang('ENABLED')}"
+                                           href="{:url($controller.'/update',array('id'=>$vo['id'],'status'=>1))}">{:lang('ENABLED')}</a>
+                                    </case>
+                                    <default/>
+                                    未知状态
+                                </switch>
+                                <a href="{:url($controller.'/edit',array('id'=>$vo['id']))}">{:lang('EDIT')}</a>
+                                <a href="{:url($controller.'/delete',array('id'=>$vo['id']))}" class="js-ajax-delete">
+                                    {:lang('DELETE')}
+                                </a>
+                            </td>
+                        </tr>
+
+                    </volist>
+                </notempty>
+            </tbody>
+        </table>
+    </form>
+    <div class="pagination">{$page|default=''}</div>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

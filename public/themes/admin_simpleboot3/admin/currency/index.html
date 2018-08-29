@@ -1,0 +1,84 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a>虚拟币列表</a></li>
+        <li><a href="{:url('Currency/add')}">添加虚拟币</a></li>
+    </ul>
+    <form action="" method="post" class="margin-top-20">
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th width="40">序号</th>
+                <th>名称</th>
+                <th>图标</th>
+                <th>换算比例</th>
+                <th>换算对象</th>
+                <th>创建时间</th>
+                <th>状态</th>
+                <th width="150">{:lang('ACTIONS')}</th>
+            </tr>
+            </thead>
+            <tbody>
+                <notempty name="data">
+                    <volist name="data" id="vo">
+                        <tr>
+                            <td>{:$i}</td>
+                            <td>{:$vo.title}</td>
+                            <td><img src="{:$vo.icon}" alt=""></td>
+                            <td>100:{:$vo.ratio}</td>
+                            <td>
+                                <switch name="vo.ratio_name">
+                                    <case value="">
+                                        人民币
+                                    </case>
+                                    <default/>
+                                    {:$vo.ratio_name}
+                                </switch>
+                            </td>
+                            <td>{:date('Y-m-d H:i:s',$vo['time'])}</td>
+                            <td>
+                                <switch name="vo.status">
+                                    <case value="1">
+                                        {:lang('ENABLED')}
+                                    </case>
+                                    <case value="2">
+                                        {:lang('DISABLED')}
+                                    </case>
+                                    <default/>
+                                    未知状态
+                                </switch>
+                            </td>
+                            <td>
+                                <switch name="vo.status">
+                                    <case value="1">
+                                        <a class="js-ajax-dialog-btn"
+                                           data-msg="你确定要{:lang('DISABLED')}"
+                                           href="{:url('Currency/update',array('id'=>$vo['id'],'status'=>2))}">{:lang('DISABLED')}</a>
+                                    </case>
+                                    <case value="2">
+                                        <a class="js-ajax-dialog-btn"
+                                           data-msg="你确定要{:lang('ENABLED')}"
+                                           href="{:url('Currency/update',array('id'=>$vo['id'],'status'=>1))}">{:lang('ENABLED')}</a>
+                                    </case>
+                                    <default/>
+                                    未知状态
+                                </switch>
+                                <a href="{:url('Currency/edit',array('id'=>$vo['id']))}">{:lang('EDIT')}</a>
+                                <a href="{:url('Currency/delete',array('id'=>$vo['id']))}" class="js-ajax-delete">
+                                    {:lang('DELETE')}
+                                </a>
+                            </td>
+                        </tr>
+
+                    </volist>
+                </notempty>
+            </tbody>
+        </table>
+    </form>
+    <div class="pagination">{$page|default=''}</div>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

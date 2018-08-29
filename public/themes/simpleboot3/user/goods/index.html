@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>个人中心 {$site_info.site_name|default=''}</title>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <include file="public@head"/>
+    <link rel="stylesheet" href="__TMPL__/public/assets/css/dianjing/market.css" >
+</head>
+<body>
+<div id="body" v-cloak>
+    <div class="header">
+        <a href="{:cmf_url('personal/index')}" ><img src="__TMPL__/public/assets/images/dianjing/back.png"></a>
+        账户记录
+        <span style="position: absolute; right: 0; color: #fff;margin-right: 10px;font-size: 16px" id="change">兑换记录</span>
+    </div>
+    <p class="money">
+        <span style="float: left;line-height: 44px;margin:0 10px">当前余额:</span>
+        <img src="__TMPL__/public/assets/images/dianjing/gold.png"  style="height: 20px;float: left;margin-top: 11px;margin-right: 5px">
+        {:empty($gold)?'0.00':$gold}
+    </p>
+    <div class="change-box">
+        <notempty name="data">
+            <volist name="data" id="vo">
+                <a class="commodity" href="{:cmf_url('Goods/thisOne',array('id'=>$vo['id']))}">
+                    <div style="width: 100%;height: 110px;border-bottom: 1px solid #e0e0e0;">
+                        <img src="{:$vo.img}"  style="width: 100%;height: 100%;margin:0 auto;display: block;">
+                    </div>
+                    <div>
+                        <p style="color: #333;margin: 10px 0 20px 0;line-height: 24px;padding-left: 10px">{:$vo.name}</p>
+                        <p style="line-height: 20px;color: #333;padding-left: 10px">
+                            {:$vo.price} {:$vo.title} <span style="float: right;margin-right: 10px;color: #999;">{:$vo.convert}人兑换</span>
+                        </p>
+                    </div>
+                </a>
+            </volist>
+        </notempty>
+    </div>
+</div>
+<script>
+    $('#change').click(function () {
+        window.location.href="{:cmf_url('Order/index')}"
+    });
+</script>
+</body>
+</html>

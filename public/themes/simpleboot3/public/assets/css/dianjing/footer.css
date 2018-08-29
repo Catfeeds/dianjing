@@ -1,0 +1,63 @@
+.footer{
+    height: 49px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+}
+.footer ul{
+    width: 100%;
+}
+.footer ul li{
+    float: left;
+    width: 25%;
+    height: 49px;
+}
+.footer ul li>span{
+    display: block;
+    margin: 0 auto;
+    height: 49px;
+    width: 30px;
+}
+.footer ul li>span>span{
+    display: block;
+    height: 25px;
+    width: 25px;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+}
+.footer ul li:first-child>span>span{
+    background-image:url("/themes/simpleboot3/public/assets/images/dianjing/zx.png");
+}
+.footer ul li:nth-child(2)>span>span{
+    background-image:url("/themes/simpleboot3/public/assets/images/dianjing/sj.png");
+}
+.footer ul li:nth-child(3)>span>span{
+    background-image:url("/themes/simpleboot3/public/assets/images/dianjing/jc.png");
+}
+.footer ul li:nth-child(4)>span>span{
+    background-image:url("/themes/simpleboot3/public/assets/images/dianjing/gr.png");
+}
+.footer ul li.cur:first-child>span>span{
+    background-image:url("/themes/simpleboot3/public/assets/images/dianjing/zx@.png");
+}
+.footer ul li.cur:nth-child(2)>span>span{
+    background-image:url("/themes/simpleboot3/public/assets/images/dianjing/sj@.png");
+}
+.footer ul li.cur:nth-child(3)>span>span{
+    background-image:url("/themes/simpleboot3/public/assets/images/dianjing/jc@.png");
+}
+.footer ul li.cur:nth-child(4)>span>span{
+    background-image:url("/themes/simpleboot3/public/assets/images/dianjing/gr@.png");
+}
+.footer ul li>span>p{
+    font-size: 12px;
+    color: #474747;
+    line-height: 25px;
+    text-align: center;
+}
+.footer ul li.cur>span>p{
+    color: #e0e000;
+}

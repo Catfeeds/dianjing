@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>首页 {$site_info.site_name|default=''}</title>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <include file="public@head"/>
+    <link rel="stylesheet" href="__TMPL__/public/assets/css/dianjing/JC_content.css">
+
+
+</head>
+<body>
+<div id="body" v-cloak="">
+    <div class="header">
+        <a  href="{:cmf_url('index/index')}"  style="-webkit-tap-highlight-color:rgba(0,0,0,0);">
+            <img src="__TMPL__/public/assets/images/dianjing/back.png"></a>
+        <span style="margin-left:-10px; font-size: 14px">{:$match.classify}</span>
+    </div>
+
+    <div class="banner" style="border-bottom: 10px solid rgba(26,26,26,0.9);height: 200px;">
+        <div id="banner-score" style="margin-top: 10px; height: 190px;">
+
+            <div class="top">
+                <div class="tour">{:date('Y-m-d H:i:s',$match['startTime'])}</div>
+            </div>
+
+            <div class="center">
+                <switch name="match['status']">
+                    <case value="1">
+                        <div style="color: #e0e000; font-size: 14px; height: 30px;width: 80px; margin: 0 auto;background: #1a1a1a;border-radius: 15px;border: 1px solid #4d4d4d;line-height: 27px;padding: 0 10px">
+                            竞猜中
+                        </div>
+                    </case>
+                    <case value="3">
+                        <div style="color: #666; font-size: 14px; height: 30px;width: 80px; margin: 0 auto;background: #1a1a1a;border-radius: 15px;border: 1px solid #4d4d4d;line-height: 27px;padding: 0 10px">
+                            已结束
+                        </div>
+                    </case>
+                    <default/>
+                    <div v-show="res.bet_num==0" style="color: #fff; font-size: 14px; height: 30px;width: 80px; margin: 0 auto;background: #1a1a1a;border-radius: 15px;border: 1px solid #4d4d4d;line-height: 27px;padding: 0 10px">
+                        暂停
+                    </div>
+                </switch>
+            </div>
+
+            <div class="bottom">
+                <switch name="match['url_status']">
+                    <case value="2">
+                        <div class="ani" v-if="res.url_status==1" @click="live">
+                            <span class="play"><img src="__TMPL__/public/assets/images/dianjing/liveplay@.png" style="margin-top: 9px"></span>
+                            <span>正在直播</span>
+                        </div>
+                    </case>
+                    <default/>
+                    <div class="ani" v-else="">
+                        <span class="play"><img src="__TMPL__/public/assets/images/dianjing/liveplay.png"></span>
+                        <span style="color: #999;">暂无直播</span>
+                    </div>
+                </switch>
+            </div>
+
+            <div class="left">
+                <div><img src="{:$match.Aicon}" alt="" style="height: 60px"></div>
+                <div style="margin-top: 5px;">{:$match.Aname}</div>
+            </div>
+
+            <div class="right">
+                <div><img src="{:$match.Bicon}" alt="" style="height: 60px;"></div>
+                <div style="margin-top: 5px;">{:$match.Bname}</div>
+            </div>
+
+        </div>
+        <!--todo 直播地址-->
+        <iframe src="" frameborder="0" id="live" width="100%" height="100%" class="hidden"></iframe>
+
+    </div>
+
+
+    <div class="nav">
+        <div class="swiper-container swiper-container-horizontal">
+            <ul class="swiper-wrapper" id="wrapper">
+                <notempty name="choice['bureau']">
+                    <volist name="choice['bureau']" id="vo">
+                        <li class="swiper-slide {:$vo['bureau_id']==$choice['bureau_id']?'cur':''} swiper-slide-active" style="width: 59.1667px; border-left: 1px solid rgb(235, 235, 235); border-radius: 2px 0px 0px 2px;" url="{:cmf_url('Details/index',array('bureau_id'=>$vo['bureau_id'],'id'=>$match['id']))}">
+                            {:$vo.name}
+                        </li>
+                    </volist>
+                </notempty>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="bigbox">
+        <div class="content all" v-if="all" style="display: block;min-height: 649px;">
+            <empty name="choice['choice']">
+                <div v-if="!(all)" style="text-align: center;color: #fff;margin-top: 70px">
+                    <img src="__TMPL__/public/assets/images/dianjing/nogame.png" style="height: 60px;margin-bottom: 20px">
+                    <br>
+                    暂无数据
+                </div>
+                <else/>
+
+                <div class="c-num" v-for=" x in all">
+                    <notempty name="choice['choice']">
+                        <volist name="choice['choice']" id="vo">
+                            <p class="num" v-if="x.market_status==0||x.suspended !=1||x.visible==1||x.odds_visible==1">
+
+				<span style="float: left;height: 20px;width: 3px;border-radius:2px;background: #e0e000;margin: 5px 10px 0 0">
+				</span>
+                                {:$vo['parent_name']}
+                                <!--<span v-if="x[0].islive==1">(滚球盘)</span>-->
+                            </p>
+
+
+                            <volist name="vo['data']" id="mo">
+                            <ul class="bf-pl" v-for="x in x" v-if="x.pause==0" selectid="{:$mo['id']}">
+                                <li >
+                                    <p style="color: #fff;width: 100%;height: 19px;overflow: hidden">
+                                        {:empty($mo['name'])?$mo['choice_name']:$mo['name']}
+                                    </p>
+                                    <p style="font-size: 12px; color: #e0e000;">
+                                        {:$mo.odds}
+                                    </p>
+                                </li>
+                            </ul>
+                        </volist>
+                        </volist>
+                        <!--不可用状态-->
+                        <!--<p class="num" style="color: #666;" v-else="">
+                                 <span style="float: left;height: 20px;width: 3px;border-radius:2px;background: #666;margin: 5px 10px 0 0">
+                                 </span>
+                                         {{x[0].name_zh}}
+                                     </p>
+                         <ul class="bf-pl" v-for="x in x" v-if="x.pause==1" style="background: #333;overflow: hidden">
+                             <li :data-market_status="x.market_status" :data-market_id="x.market_id" :data-odds_id="x.odds_id" :data-id="x.pause" style="background: #333;height: 48px;">
+                                 <p style=" color: #666;width: 100%;height: 19px;overflow: hidden" v-else="">{{x.odds_title}}</p>
+                                 <p style="font-size: 12px; color: #666;" v-else="">{{x.odds_value_80}}</p>
+                             </li>
+                         </ul>-->
+                    </notempty>
+                </div>
+            </empty>
+        </div>
+    </div>
+
+
+    <!--<div class="pop hidden" @click="new_close">
+        <div class="pop-box">
+            <div class="pop-h">
+                <span>金币余额: {{gold}}</span>
+                <span></span>
+                <span><img src="__TMPL__/public/assets/images/dianjing/close@.png" alt="" class="close"></span>
+            </div>
+            <div class="pop-b">
+                <div class="input">
+                    <p>
+                        <span>{{pop_name}}</span>
+                        <span>@{{pop_odds}}</span>
+                        <span class="gold-input">
+                                <span class="gold-v">{{goldInput}}</span>
+                                <span class="embed">请输入金币</span>
+                            </span>
+                    </p>
+                    <p>
+                        <span style="color: #fff;">全场胜平负(90分钟内,包含补时)</span>
+                        <span>预计返还: <span>{{sub}}</span></span>
+                    </p>
+                </div>
+                <div class="button">
+                    <p>
+                        <span @click="getNum">百</span>
+                        <span @click="getNum">1</span>
+                        <span @click="getNum">2</span>
+                        <span @click="getNum">3</span>
+                    </p>
+                    <p>
+                        <span @click="getNum">千</span>
+                        <span @click="getNum">4</span>
+                        <span @click="getNum">5</span>
+                        <span @click="getNum">6</span>
+                    </p>
+                    <p>
+                        <span @click="getNum">万</span>
+                        <span @click="getNum">7</span>
+                        <span @click="getNum">8</span>
+                        <span @click="getNum">9</span>
+                    </p>
+                    <p>
+                        <span @click="getNum">十万</span>
+                        <span @click="getNum">最高投注</span>
+                        <span @click="getNum">0</span>
+                        <span @click="getNum">清除</span>
+                    </p>
+                    <div>
+                        <div><img class="ok" src="__TMPL__/public/assets/images/dianjing/ok.png" alt="" @click="odds_change">投注时接受赔率变化</div>
+                        <div @click="submit">投注</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tzcg hidden">
+        <div class="tz-box">
+            <div class="title">
+                <p>投注成功</p>
+                <p><span>{{res.home_name}} vs {{res.away_name}}</span><span>{{res.startdate.substring(5,19)}}</span></p>
+            </div>
+            <div class="info">
+                <p><span>{{pop_name}}</span> <span>@{{pop_odds}}</span></p>
+                <p>
+                    <span>投注金额 {{goldInput}}</span>
+                    <span> {{sub}}</span>
+                    <span>预计返还</span>
+                </p>
+            </div>
+            <div class="button">
+                <p>
+                    <span @click="guess_hist">投注历史</span>
+                    <span @click="goOn">继续投注</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="tzsb1 hidden">
+        <div class="tz-box">
+            <div class="title">
+                <p>投注失败</p>
+                <p><span>{{res.home_name}} vs {{res.away_name}}</span><span>{{res.startdate.substring(5,19)}}</span></p>
+            </div>
+            <div class="info">
+                赔率已发生变化, 已停盘
+            </div>
+            <div class="button">
+                <p>
+                    <span>投注历史</span>
+                    <span @click="goOn">继续投注</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="tzsb2 hidden">
+        <div class="tz-box">
+            <div class="title">
+                <p>投注失败</p>
+                <p><span>{{res.home_name}} vs {{res.away_name}}</span><span>{{res.startdate.substring(5,19)}}</span></p>
+            </div>
+            <div class="info">
+                赔率已发生变化, 请重新投注
+            </div>
+            <div class="button">
+                <p>
+                    <span>投注历史</span>
+                    <span @click="goOn">继续投注</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="pay hidden">
+        <div class="pay-box">
+            <div class="title">
+                <span>支付方式</span>
+                <img src="__TMPL__/public/assets/images/dianjing/close@.png" alt="">
+            </div>
+            <div class="info">
+                <p>
+                    <span>道具矿泉水</span>
+                    <span>10RMB</span>
+                    <span>赠送1000金币</span>
+                </p>
+                <p>
+                    <img src="__TMPL__/public/assets/images/dianjing/zfb.png" alt="">
+                    <span>支付宝支付</span>
+                    <img src="__TMPL__/public/assets/images/dianjing/go.png" alt="">
+                </p>
+                <p>
+                    <img src="__TMPL__/public/assets/images/dianjing/wechat.png" alt="">
+                    <span>微信支付</span>
+                    <img src="__TMPL__/public/assets/images/dianjing/go.png" alt="">
+                </p>
+                <p>
+                    <img src="__TMPL__/public/assets/images/dianjing/dsf.png" alt="">
+                    <span>第三方支付</span>
+                    <img src="__TMPL__/public/assets/images/dianjing/go.png" alt="">
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="notEnough hidden">
+        <div class="n-box">
+            <div>
+                <img src="__TMPL__/public/assets/images/dianjing/pig.png" alt="">
+                <p>您的金币不足,本次竞猜可购买</p>
+                <p>({{payTitle}})×{{number}}道具获取<span>{{gNumber}}</span>金币</p>
+            </div>
+            <div>
+                <span @click="cancel">我再想想</span>
+                <span @click="get">立即获取</span>
+            </div>
+        </div>
+    </div>
+    <div class="notEnough1 hidden">
+        <div class="n-box">
+            <div>
+                <img src="__TMPL__/public/assets/images/dianjing/pig.png" alt="">
+                <p>金币不足,将消耗<span style="color: green;">{{diamond}}</span>钻石购买</p>
+                <p>({{payTitle}})等道具 获取<span>{{diamond*100}}</span>金币</p>
+            </div>
+            <div>
+                <span @click="cancel">我再想想</span>
+                <span @click="get1">立即获取</span>
+            </div>
+        </div>
+    </div>
+    <div class="alert hidden">
+        <div class="alert-box">
+            <p></p>
+            <p @click="box_close">关闭</p>
+        </div>
+    </div>
+    <div class="alert2 hidden">
+        <div class="alert-box">
+            <p></p>
+            <p @click="box_close">
+                <span @click="recharge">去兑换</span>
+                <span @click="box_close">关闭</span>
+            </p>
+        </div>
+    </div>-->
+</div>
+<link rel="stylesheet" href="__STATIC__/js/layer/mobile/need/layer.css">
+<script src="__STATIC__/js/layer/mobile/layer.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#wrapper').children().click(function () {
+           var url = $(this).attr('url');
+            window.location.href = url;
+        });
+
+
+        $('.bf-pl').click(function () {
+            var id    = $(this).attr('selectid');
+            var url   = "{:cmf_url('Details/save')}";
+            var title1 = $(this).children().children().eq(0).text();
+            var title2 = $(this).children().children().eq(1).text();
+
+            layer.open({
+                title: [
+                    title1 +'@'+title2 ,
+                    'background-color: rgba(36,36,36,0.9); color:#fff;'
+                ],
+                style: 'background-color:rgba(36,36,36,0.9); color:#fff; border:none;', //自定风格
+
+                content: '<form action="'+url+'" method="post" class="js-ajax-form">' +
+                '<div class="modal-body">' +
+                '  <div class="form-group">' +
+                '<label for="name">数量：</label>' +
+                '<input class="form-control"  type="number" name="number"/>' +
+                '</div>' +
+                '<input  type="hidden" name="choice_id" value="'+id+'">' +
+                '<button type="submit" id="submit" class="btn btn-primary js-ajax-submit" >投注</button>' +
+                '</form>',
+            });
+
+        });
+
+    })
+</script>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

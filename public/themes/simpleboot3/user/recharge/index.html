@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>个人中心 {$site_info.site_name|default=''}</title>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <include file="public@head"/>
+    <link rel="stylesheet" href="__TMPL__/public/assets/css/dianjing/recharge.css" >
+    <style>
+        li.select>label:nth-child(3){
+            float: right;
+            height: 30px;
+            width: 80px;
+            background:#e0e0e0;
+            border-radius: 3px;
+            margin-top: 10px;
+            color: #333;
+            line-height: 30px;
+            text-align: center
+        }
+        li.select>label:nth-child(3).cur{
+            background: #e0e000;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<div id="body" v-cloak>
+    <div class="header">
+        <a  href="javascript:void(0)" onclick="javascript:history.go(-1);return false;" > 
+            <img src="__TMPL__/public/assets/images/dianjing/back.png" ></a>
+        兑换
+    </div>
+    <div class="select" style="background: #ebebeb;margin-bottom: 0">
+        <span style="margin-right: 10px">当前余额:</span>
+        <img src="{:$data.icon}"  ><span>{:empty($user['diamond']['number'])?'0.00':$user['diamond']['number']}</span>
+
+    </div>
+    <form action="{:cmf_url('recharge/takePost')}" method="post">
+        <input type="hidden" name="type" value="1">
+
+    <ul>
+        <volist name="data['grade']" id="vo">
+            <li class="select">
+                <img src="{:$data.icon}" >
+
+                <span style="margin-right: 10px;color: #333;">×{:$vo*(100/$data['ratio'])}</span>
+                <label class="change" for="label{:$vo}">
+                    ￥
+                    <span class="gold">{:$vo}</span>
+                    <input type="radio" name="number" id="label{:$vo}"
+                           value="{:$data['ratio']},{:$vo}" style="display: none;">
+
+                </label>
+            </li>
+        </volist>
+    </ul>
+
+    <div class="select" style="background: #ebebeb;margin-bottom: 0">
+        <span style="margin-right: 10px">支付方式</span>
+    </div>
+
+    <div class="pay" style=" width: 100%;position: fixed;bottom: 0">
+        <button type="submit" style="background: #e0e000;text-align: center;line-height: 55px;height: 55px;width: 100%;color: #333;font-size: 16px">支付</button>
+    </div>
+    </form>
+</div>
+<script>
+    $(document).ready(function () {
+        var change = $('.change');
+        change.eq(0).addClass('cur');
+        $('[name="number"]').eq(0).prop('checked','checked');
+        change.click(function (i) {
+            change.removeClass('cur');
+            $(this).addClass('cur');
+        })
+    })
+    
+</script>
+</body>
+</html>
