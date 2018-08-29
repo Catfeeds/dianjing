@@ -1,0 +1,51 @@
+.login{
+    padding: 0 50px;
+}
+.phone{
+    height: 44px;
+    width: 100%;
+    border-bottom: 1px solid #999;
+    margin-bottom: 30px;
+    position: relative;
+}
+.phone span:first-child{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    margin-top: 12px;
+}
+.phone span:last-child{
+    height: 30px;
+    width: 30px;
+    margin-top: 7px;
+    position: absolute;
+    right: 0;
+    top:0;
+}
+.phone span:last-child img{
+    display: block;
+    width: 20px;
+    margin:10px auto;
+}
+.phone span:first-child img{
+    height: 20px;
+    margin-left: 5px;
+}
+.phone span input{
+    height: 20px;
+    width: 100%;
+    margin-top: 13px;
+    background: #f5f5f5;
+    padding-left: 30px;
+    font-size: 16px;
+}
+.perfecting{
+    height: 44px;
+    line-height: 44px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background: #333;
+    border-radius: 22px;
+}

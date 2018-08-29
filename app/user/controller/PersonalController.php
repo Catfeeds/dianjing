@@ -31,34 +31,7 @@ class PersonalController extends HomeBaseController
         $user      = session('user');
         if (empty($user))
         {
-            $id        = $this->request->param("id", 2, "intval");
-            $userModel = new UserModel();
-            $user      = $userModel->field('id,user_login,user_nickname,avatar')->where('id', $id)->find() -> toArray();
-
-            if (empty($user)) {
-                $this->error("查无此人！");
-            }
-            $currency = model('UserCurrency') -> index($user['id']);
-            if (empty($currency))
-            {
-                $user['diamond'] = 0;
-                $user['gold']   = 0;
-            }
-            else
-            {
-                foreach ($currency as $val)
-                {
-                    switch ($val['currency_id'])
-                    {
-                        case 1:
-                            $user['diamond'] = $val;
-                        case 2:
-                            $user['gold']    = $val;
-                        default:
-                    }
-                }
-            }
-            session('user',$user);
+            $this -> redirect('login/index');
         }
 
 

@@ -11,7 +11,7 @@
  Target Server Version : 100119
  File Encoding         : 65001
 
- Date: 29/08/2018 11:39:29
+ Date: 29/08/2018 16:51:14
 */
 
 SET NAMES utf8mb4;
@@ -1296,7 +1296,7 @@ CREATE TABLE `dj_user`  (
 -- Records of dj_user
 -- ----------------------------
 INSERT INTO `dj_user` VALUES (1, 1, 0, -28800, 1535508796, 0, 0, 0.00, 1534385538, 1, 'admin', '###8d900c2deab8b6630ac19285294b21ec', '小谢', '2470588931@qq.com', '', '', '', '127.0.0.1', '', '', NULL);
-INSERT INTO `dj_user` VALUES (2, 2, 0, 0, 1535513200, 1, 1, 0.00, 1534910393, 1, 'zhangsan', '###8d900c2deab8b6630ac19285294b21ec', '张三', '123456@qq.com', '', '', '', '127.0.0.1', '', '13532637539', NULL);
+INSERT INTO `dj_user` VALUES (2, 2, 0, 0, 1535530573, 2, 2, 0.00, 1534910393, 1, 'zhangsan', '###8d900c2deab8b6630ac19285294b21ec', '张三', '123456@qq.com', '', '', '', '127.0.0.1', '', '13532637539', NULL);
 
 -- ----------------------------
 -- Table structure for dj_user_action
@@ -1448,12 +1448,13 @@ CREATE TABLE `dj_user_score_log`  (
   `score` int(11) NOT NULL DEFAULT 0 COMMENT '更改积分，可以为负',
   `coin` int(11) NOT NULL DEFAULT 0 COMMENT '更改金币，可以为负',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户操作积分等奖励日志表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户操作积分等奖励日志表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of dj_user_score_log
 -- ----------------------------
 INSERT INTO `dj_user_score_log` VALUES (1, 2, 1535513128, 'login', 1, 1);
+INSERT INTO `dj_user_score_log` VALUES (2, 2, 1535530573, 'login', 1, 1);
 
 -- ----------------------------
 -- Table structure for dj_user_token

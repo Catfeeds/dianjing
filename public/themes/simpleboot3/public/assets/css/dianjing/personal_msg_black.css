@@ -1,0 +1,83 @@
+.login{
+    padding: 0 50px;
+}
+.hidden{
+    display: none;
+}
+.phone{
+    height: 44px;
+    width: 100%;
+    border-bottom: 1px solid #999;
+    position: relative;
+}
+.phone span:first-child{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    margin-top: 12px;
+}
+.phone span:last-child{
+    height: 30px;
+    width: 100px;
+    margin-top: 9px;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: right;
+    color: #333;
+    font-weight: 700;
+    position: absolute;
+    right: 0;
+    top:0;
+}
+.phone span:last-child img{
+    display: block;
+    width: 20px;
+    margin:10px auto;
+}
+.phone span:first-child img{
+    height: 20px;
+    margin-left: 5px;
+}
+.phone span input{
+    height: 20px;
+    width: 100%;
+    margin-top: 13px;
+    background: #f5f5f5;
+    padding-left: 30px;
+    font-size: 16px;
+}
+.perfecting1{
+    height: 44px;
+    line-height: 44px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background: #333;
+    border-radius: 22px;
+}
+.flag1{
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    color: #d4171d;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+.alert{
+    background:rgba(0,0,0,0.2) ;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    padding: 240px 60px 0 60px ;
+}
+.alert .alert-box{
+    height: 124px;
+    line-height: 124px;
+    text-align: center;
+    width: 100%;
+    border-radius: 6px;
+    background: #ebebeb;
+}

@@ -47,6 +47,9 @@
         <span>账户记录</span>
         <img src="__TMPL__/public/assets/images/dianjing/smart-right.png"  style="height: 10px; margin-top: 20px; margin-right:0; float: right" alt="">
     </div>
+    <div class="select" id="login_out" style="margin-top: 20px; text-align: center;color: #d4171d;">
+        退出登录
+    </div>
     <div class="footer">
         <ul>
             <li id="guessing" style="width: 50%">
@@ -83,7 +86,9 @@
     $('#user_list').click(function () {
         window.location.href="{:cmf_url('UserMoney/index')}"
     });
-
+    $('#login_out').click(function () {
+        window.location.href="{:cmf_url('index/logout')}"
+    });
 </script>
 </body>
 </html>

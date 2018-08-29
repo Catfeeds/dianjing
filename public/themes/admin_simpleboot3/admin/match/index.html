@@ -56,16 +56,16 @@
                                 </switch>
                             </td>
                             <td>
-                                <switch name="vo.is_live">
+                                <switch name="vo.url_status">
                                     <case value="1">
                                         <a class="btn btn-danger js-ajax-dialog-btn"
                                            data-msg="你确定要{:lang('ENABLED')}"
-                                           href="{:url('Match/update',array('id'=>$vo['id'],'is_live'=>2))}">关闭</a>
+                                           href="{:url('Match/update',array('id'=>$vo['id'],'url_status'=>2))}">关闭</a>
                                     </case>
                                     <case value="2">
                                         <a class="btn btn-success js-ajax-dialog-btn"
                                            data-msg="你确定要关闭"
-                                           href="{:url('Match/update',array('id'=>$vo['id'],'is_live'=>1))}">{:lang('ENABLED')}</a>
+                                           href="{:url('Match/update',array('id'=>$vo['id'],'url_status'=>1))}">{:lang('ENABLED')}</a>
                                     </case>
                                     <default/>
                                     未知状态
