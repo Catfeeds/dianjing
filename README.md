@@ -1,4 +1,4 @@
-ThinkCMF 5.0 API 1.1.0
+
 ===============
 ### 环境推荐
 > php5.5+
@@ -9,8 +9,6 @@ ThinkCMF 5.0 API 1.1.0
 
 ### 安装步骤
 
-1. 请先安装ThinkCMF5 https://github.com/thinkcmf/thinkcmf
-2. 再把本项目代码覆盖到 thinkcmf5根目录(最终目录参考http://www.kancloud.cn/thinkcmf/doc/266477)
 ```
 thinkcmf  根目录
 ├─api                   api目录
@@ -54,44 +52,6 @@ thinkcmf  根目录
 ├─README.md             README 文件
 ├─think                 命令行入口文件
 ```
-
-### API手册
-http://www.kancloud.cn/thinkcmf/cmf5api
-
-QQ群:100828313 (付费)
-
-### ThinkCMF小程序 ThinkCMFlite发布
-https://www.kancloud.cn/thinkcmf/cmf5api/451391
-
-### 更新日志
-#### 1.1.0
-[核心]
-* 增加是否收藏判断
-* 增加登录API,返回用户信息
-* 优化登录时设备类型判断
-* 优化手机号验证，支持国际手机号
-* 优化评论列表，无须用户登录
-* 优化rest api基类设备类型获取
-* 优化rest api用户token生成逻辑
-* 修复幻灯片列表，后台排序无效 #8
-* 修复UserModel.php被写死了cmf_前缀 #9
-* 修复文章附件url转化问题
-* 修复评论成功后，评论对象评论数字段没有加1
-* 修复添加收藏报错
-* 修复收藏判断错误
-* 修复文章列表发布时间格式问题，统一为时间戳
-* 修复评论用户头像链接错误
-* 修复不加载动态路由
-
-[门户应用]
-* 增加指定分类的子分类列表
-* 增加文章点击数更新
-* 增加相关文章接口
-* 增加文章收藏接口
-* 增加取消文章收藏接口
-
-
-
 
 
 
