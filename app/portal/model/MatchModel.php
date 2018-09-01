@@ -24,17 +24,23 @@ class MatchModel extends Model
     public function index($type)
     {
 
+        $classify = $this -> classify();
         $where = array(
             'a.deletetime'  => 1,
             'a.status'      => ['neq',3],
         );
+        if ($classify!==false)
+        {
+            $where['b.parent_id'] = ['in',$classify];
+        }
+
         switch ($type)
         {
             case 0:
 
                 break;
             default:
-                $where['b.id'] = $type;
+                $where['b.parent_id'] = $type;
         }
 
         $data  = $this
@@ -47,6 +53,28 @@ class MatchModel extends Model
             -> where($where)
             -> paginate(10);
         return $data;
+    }
+
+    /**
+     * 获取点选类型
+     * @return array|bool
+     */
+    protected function classify()
+    {
+        $classify = session('classify');
+        if (empty($classify))
+        {
+            return false;
+        }
+        $array    = array();
+        foreach ($classify as $key => $val)
+        {
+            if ($val==1)
+            {
+                $array[] = $key;
+            }
+        }
+        return $array;
     }
 
     /**

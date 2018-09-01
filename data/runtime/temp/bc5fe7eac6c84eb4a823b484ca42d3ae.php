@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:40:"themes/simpleboot3/user\order\index.html";i:1535093875;s:67:"E:\xampp\htdocs\thinkcmf\public\themes\simpleboot3\public\head.html";i:1534385458;s:71:"E:\xampp\htdocs\thinkcmf\public\themes\simpleboot3\public\function.html";i:1534385458;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:40:"themes/simpleboot3/user\order\index.html";i:1535093875;s:67:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\head.html";i:1534385458;s:71:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\function.html";i:1534385458;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -195,7 +195,7 @@
     <div class="pop" id="pop" style="background: rgb(235, 235, 235); display: block; height: 943px;">
         <div class="s-box">
             <p></p>
-            <ul @click="toggle_game" class="toggle">
+            <ul @click="toggle_game" class="toggle" id="toggle">
                 <notempty name="classify">
                     <volist name="classify" id="vo">
                         <input type="number" name="classify_id[{:$vo.id}]"  value="{:empty($vo['status'])?1:$vo['status'];}" style="display: none">
@@ -210,8 +210,8 @@
                                 <php>$class = '';</php>
                             </switch>
                         </empty>
-                        <li class="{:$class} classify_id"  data-game-id="{:$vo.id}">
-                            <img src="{:$vo.icon}" style="margin: 2px 10px 0 0; width: 20px;height: auto;">
+                        <li class="{:$class} classify_id "  data-game-id="{:$vo.id}">
+                            <img src="{:$vo.icon}" >
                             <span style="overflow: hidden">{:$vo.name} <!--(0)--></span>
                             <span></span>
                         </li>
@@ -236,21 +236,38 @@
 </div>
 <script src="__STATIC__/js/admin.js"></script>
 <script>
-    $('.classify_id').click(function () {
-        var prev = $(this).prev();
-        if (prev.val() == 1)
-        {
-            $(this).removeClass('cur');
-            prev.val(2)
-        }
-        else
-        {
-            $(this).addClass('cur');
-            prev.val(1)
-        }
+    $(document).ready(function () {
 
+        $('.classify_id').click(function () {
+            var prev = $(this).prev();
+            if (prev.val() == 1)
+            {
+                $(this).removeClass('cur');
+                prev.val(2)
+            }
+            else
+            {
+                $(this).addClass('cur');
+                prev.val(1)
+            }
 
-    })
+        });
+
+        //初始
+        var width = $('#toggle').width();
+        splicing(width);
+        //调整
+        $(window).resize(function() {
+            var width = $('#toggle').width();
+            splicing(width);
+        });
+    });
+
+    function splicing(width) {
+        var len = $('.classify_id').width();
+        var add = Math.floor((width-2*len)/10);
+        $('.classify_id').css('margin-right',add);
+    }
 </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:43:"themes/simpleboot3/user\goods\this_one.html";i:1535083071;s:67:"E:\xampp\htdocs\thinkcmf\public\themes\simpleboot3\public\head.html";i:1534385458;s:71:"E:\xampp\htdocs\thinkcmf\public\themes\simpleboot3\public\function.html";i:1534385458;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:43:"themes/simpleboot3/user\goods\this_one.html";i:1535595603;s:67:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\head.html";i:1534385458;s:71:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\function.html";i:1534385458;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -105,10 +105,10 @@ function _sp_helloworld3(){
         <input type="hidden" name="price" value="<?php echo $data['price']; ?>">
     <p class="phone">
         &ensp;手机号
-        <input type="number" placeholder="请输入手机号" name="phone" id='phone_num' style="color: #333;font-size: 14px"></p>
+        <input type="number" required placeholder="请输入手机号" name="phone" id='phone_num' style="color: #333;font-size: 14px"></p>
     <p class="qq">
         &ensp;QQ
-        <input type="number" name="qq" placeholder="请输入QQ号" id="qq_num" style="color: #333;font-size: 14px"></p>
+        <input type="number" required name="qq" placeholder="请输入QQ号" id="qq_num" style="color: #333;font-size: 14px"></p>
     <button type="submit" class="sub js-ajax-submit" style="outline:none;background-color: #e0e000;">
         <div  id="sub">提交</div>
     </button>

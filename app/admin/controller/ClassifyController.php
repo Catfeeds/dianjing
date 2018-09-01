@@ -71,8 +71,8 @@ class ClassifyController extends ClassifyBaseController
                                              <a href="javaScript:" name="change">' . lang('EDIT') . '</a> 
                                               <a class="js-ajax-delete" href="' . url($this -> controller."/delete", ["id" => $value['id'], "menu_id" => $this->request->param("menu_id")]) . '">' . lang('DELETE') . '</a> ';
             $result[$key]['status']         = $value['status']==1 ? lang('DISPLAY') : lang('HIDDEN');
-            $result[$key]['icon']    = "<img src='".$m['icon']."' style=\"height: 50px;\"/>";
-            $result[$key]['time']    = date('Y-m-d H:i:s',$m['time']);
+            $result[$key]['icon']    = "<img src='".$value['icon']."' style=\"height: 50px;\"/>";
+            $result[$key]['time']    = date('Y-m-d H:i:s',$value['time']);
         }
 
         $tree->init($result);

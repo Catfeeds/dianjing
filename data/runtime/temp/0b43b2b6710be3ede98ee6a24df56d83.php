@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:40:"themes/simpleboot3/user\login\index.html";i:1535513923;s:67:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\head.html";i:1534385458;s:71:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\function.html";i:1534385458;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:40:"themes/simpleboot3/user\login\index.html";i:1535705789;s:67:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\head.html";i:1534385458;s:71:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\function.html";i:1534385458;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,21 +98,19 @@ function _sp_helloworld3(){
             <span><img src="/themes/simpleboot3/public/assets/images/dianjing/iphoney.png" alt=""></span>
             <span><input type="text" placeholder="请输入手机号" name="username"></span>
         </div>
-        <div class="password">
+        <div class="password" style="margin-bottom: 20px">
             <span><img src="/themes/simpleboot3/public/assets/images/dianjing/passy.png" alt=""></span>
             <span><input class="setPW" name="password" type="password" placeholder="请输入密码"></span>
             <span class="off_on"><img src="/themes/simpleboot3/public/assets/images/dianjing/off_white.png" alt=""></span>
         </div>
         <div class="phone">
             <span></span>
-            <span><input type="text" name="captcha" placeholder="请输入验证码" ></span>
-
-        </div>
-        <div class="phone">
-            <span></span>
-            <span><?php $__CAPTCHA_SRC=url('/captcha/new').'?height=38&width=160&font_size=20'; ?>
+            <span><input type="text" name="captcha" placeholder="请输入验证码" >
+                    <span style="float: right"><?php $__CAPTCHA_SRC=url('/captcha/new').'?height=30&width=105&font_size=16'; ?>
 <img src="<?php echo $__CAPTCHA_SRC; ?>" onclick="this.src='<?php echo $__CAPTCHA_SRC; ?>&time='+Math.random();" title="换一张" class="captcha captcha-img verify_img" style="cursor: pointer;"/>
 <input type="hidden" name="_captcha_id" value=""></span>
+            </span>
+
         </div>
         <div class="flag"></div>
         <div class="pass hidden">登录</div>

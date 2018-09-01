@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:45:"themes/simpleboot3/portal\classify\index.html";i:1535357025;s:67:"E:\xampp\htdocs\thinkcmf\public\themes\simpleboot3\public\head.html";i:1534385458;s:71:"E:\xampp\htdocs\thinkcmf\public\themes\simpleboot3\public\function.html";i:1534385458;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:45:"themes/simpleboot3/portal\classify\index.html";i:1535769566;s:67:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\head.html";i:1534385458;s:71:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\function.html";i:1534385458;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -268,12 +268,12 @@ function _sp_helloworld3(){
     <div class="pop" id="pop" style="background: rgb(235, 235, 235); display: block; height: 943px;">
         <div class="s-box">
             <p></p>
-            <ul @click="toggle_game" class="toggle">
+            <ul @click="toggle_game" class="toggle" id="toggle">
                 <?php if(!(empty($classify) || (($classify instanceof \think\Collection || $classify instanceof \think\Paginator ) && $classify->isEmpty()))): if(is_array($classify) || $classify instanceof \think\Collection || $classify instanceof \think\Paginator): $i = 0; $__LIST__ = $classify;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                         <input type="number" name="classify_id[<?php echo $vo['id']; ?>]"  value="<?php echo empty($vo['status'])?1:$vo['status'];; ?>" style="display: none">
                         <?php if(empty($vo['status']) || (($vo['status'] instanceof \think\Collection || $vo['status'] instanceof \think\Paginator ) && $vo['status']->isEmpty())): $class = 'cur'; else: switch($vo['status']): case "1": $class = 'cur'; break; default: $class = ''; endswitch; endif; ?>
-                        <li class="<?php echo $class; ?> classify_id"  data-game-id="<?php echo $vo['id']; ?>">
-                            <img src="<?php echo $vo['icon']; ?>" style="margin: 2px 10px 0 0; width: 20px;height: auto;">
+                        <li class="<?php echo $class; ?> classify_id "  data-game-id="<?php echo $vo['id']; ?>">
+                            <img src="<?php echo $vo['icon']; ?>" >
                             <span style="overflow: hidden"><?php echo $vo['name']; ?> <!--(0)--></span>
                             <span></span>
                         </li>
@@ -297,21 +297,38 @@ function _sp_helloworld3(){
 </div>
 <script src="/static/js/admin.js"></script>
 <script>
-    $('.classify_id').click(function () {
-        var prev = $(this).prev();
-        if (prev.val() == 1)
-        {
-            $(this).removeClass('cur');
-            prev.val(2)
-        }
-        else
-        {
-            $(this).addClass('cur');
-            prev.val(1)
-        }
+    $(document).ready(function () {
 
+        $('.classify_id').click(function () {
+            var prev = $(this).prev();
+            if (prev.val() == 1)
+            {
+                $(this).removeClass('cur');
+                prev.val(2)
+            }
+            else
+            {
+                $(this).addClass('cur');
+                prev.val(1)
+            }
 
-    })
+        });
+
+        //初始
+        var width = $('#toggle').width();
+        splicing(width);
+        //调整
+        $(window).resize(function() {
+            var width = $('#toggle').width();
+            splicing(width);
+        });
+    });
+
+    function splicing(width) {
+        var len = $('.classify_id').width();
+        var add = Math.floor((width-2*len)/10);
+        $('.classify_id').css('margin-right',add);
+    }
 </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:42:"themes/simpleboot3/portal\index\index.html";i:1535423984;s:67:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\head.html";i:1534385458;s:71:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\function.html";i:1534385458;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:42:"themes/simpleboot3/portal\index\index.html";i:1535769872;s:67:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\head.html";i:1534385458;s:71:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\function.html";i:1534385458;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,6 +79,11 @@ function _sp_helloworld3(){
 <script src="/static/js/wind.js"></script>
 	
     <link href="/themes/simpleboot3/public/assets/css/dianjing/guess_list.css" rel="stylesheet">
+    <style>
+        .lesshidden{
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <div id="body">
@@ -95,11 +100,11 @@ function _sp_helloworld3(){
                     <div></div>
                     <p>全部游戏</p>
                 </li>
-                <li class="swiper-slide <?php echo $type==1?'cur':''; ?>" url="<?php echo cmf_url('Index/index',array('type' => 1)); ?>">
+                <li class="swiper-slide <?php echo $type==2?'cur':''; ?>" url="<?php echo cmf_url('Index/index',array('type' => 2)); ?>">
                     <div></div>
                     <p>王者荣耀</p>
                 </li>
-                <li class="swiper-slide <?php echo $type==2?'cur':''; ?>" url="<?php echo cmf_url('Index/index',array('type' => 2)); ?>">
+                <li class="swiper-slide <?php echo $type==1?'cur':''; ?>" url="<?php echo cmf_url('Index/index',array('type' => 1)); ?>">
                     <div></div>
                     <p>英雄联盟</p>
                 </li>
@@ -107,7 +112,7 @@ function _sp_helloworld3(){
                     <div></div>
                     <p>刀塔2</p>
                 </li>
-                <li class="swiper-slide <?php echo $type==4?'cur':''; ?>" url="<?php echo cmf_url('Index/index',array('type' => 4)); ?>">
+                <li class="swiper-slide <?php echo $type==5?'cur':''; ?>" url="<?php echo cmf_url('Index/index',array('type' => 5)); ?>">
                     <div></div>
                     <p>CS:GO</p>
                 </li>
@@ -118,8 +123,13 @@ function _sp_helloworld3(){
     <div class="game" v-cloak>
 
         <div class="content-list all">
+            <!--等待小点-->
+            <p class="load" style="text-align: center">
+            <img src="/themes/simpleboot3/public/assets/images/dianjing/load.gif"  style="height: 15px;margin-top:200px; ">
+            </p>
+
             <?php if(!(empty($data) || (($data instanceof \think\Collection || $data instanceof \think\Paginator ) && $data->isEmpty()))): if(is_array($data) || $data instanceof \think\Collection || $data instanceof \think\Paginator): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-                    <div class="list" >
+                    <div class="list lesshidden"  >
 
                         <div class="top">
                     <span style="float: left;margin-right: 10px">
@@ -205,12 +215,11 @@ function _sp_helloworld3(){
                         </div>
                     </div>
                 <?php endforeach; endif; else: echo "" ;endif; else: ?>
-                <p class="nogame" style="text-align: center; margin-top: 200px;color: #ccc;  border-radius: 2px" v-cloak><img
+                <p class="nogame lesshidden" style="text-align: center; margin-top: 200px;color: #ccc;  border-radius: 2px" v-cloak><img
                         src="/themes/simpleboot3/public/assets/images/dianjing/nogame.png"  alt="">
                     <br>
                     暂无数据
                 </p>
-                <p class="load" style="text-align: center"><img src="/themes/simpleboot3/public/assets/images/dianjing/load.gif"  style="height: 15px;margin-top:200px; "></p>
             <?php endif; ?>
 
 
@@ -263,9 +272,12 @@ function _sp_helloworld3(){
         $('.competition').click(function () {
             var string = $(this).parent().next().val();
             window.location.href = string;
-        })
+        });
+
+        setTimeout(function (){setDisplay()},10000);
 
     });
+
     //修改宽度
     function splicing(width) {
         var number = 5;
@@ -274,7 +286,10 @@ function _sp_helloworld3(){
             $(this).css('width', str);
         });
     }
-
+    function setDisplay() {
+        $('.load').css('display','none');
+        $('.lesshidden').css('display','block');
+    }
 </script>
 </body>
 </html>

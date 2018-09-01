@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:43:"themes/simpleboot3/user\register\index.html";i:1535513842;s:67:"E:\xampp\htdocs\thinkcmf\public\themes\simpleboot3\public\head.html";i:1534385458;s:71:"E:\xampp\htdocs\thinkcmf\public\themes\simpleboot3\public\function.html";i:1534385458;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:43:"themes/simpleboot3/user\register\index.html";i:1535685904;s:67:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\head.html";i:1534385458;s:71:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\function.html";i:1534385458;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,7 +84,8 @@ function _sp_helloworld3(){
 <body>
 <div id="body">
     <div class="header">
-        <a href="<?php echo url('login/index'); ?>" style="-webkit-tap-highlight-color:rgba(0,0,0,0);"><img src="/themes/simpleboot3/public/assets/images/dianjing/back.png" alt=""></a>
+        <a href="<?php echo url('login/index'); ?>" style="-webkit-tap-highlight-color:rgba(0,0,0,0);">
+            <img src="/themes/simpleboot3/public/assets/images/dianjing/back.png" alt=""></a>
         <p>注册</p>
     </div>
     <div class="logo">

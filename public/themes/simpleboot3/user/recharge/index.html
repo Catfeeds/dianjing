@@ -36,7 +36,7 @@
         <img src="{:$data.icon}"  ><span>{:empty($user['diamond']['number'])?'0.00':$user['diamond']['number']}</span>
 
     </div>
-    <form action="{:cmf_url('recharge/takePost')}" method="post">
+    <form action="{:cmf_url('recharge/takePost')}" method="post" class="js-ajax-form">
         <input type="hidden" name="type" value="1">
 
     <ul>
@@ -61,12 +61,16 @@
             <p style="font-size: 14px; color: #333;padding-left: 10px;height: 44px; line-height: 44px;margin-top: -10px">支付方式</p>
             <p id="1_zfb" class="payway">
                 <img src="__TMPL__/public/assets/images/dianjing/zfb-b.png" style="height: 34px;margin-top: 5px">
+                <input type="radio" name="pay" id="pay1"
+                       value="1" style="display: none;" checked>
                 <span class="payactive">
                 </span>
             </p>
 
             <p id="2_wx" class="payway">
                 <img src="__TMPL__/public/assets/images/dianjing/wx.png" style="height: 34px;margin-top: 5px">
+                <input type="radio" name="pay" id="pay2"
+                       value="2" style="display: none;">
                 <span class="">
                 </span>
             </p>
@@ -77,11 +81,13 @@
         </div>
 
     <div class="pay" style=" width: 100%;position: fixed;bottom: 0">
-        <button type="submit" style="background: #e0e000;text-align: center;line-height: 55px;height: 55px;width: 100%;color: #333;font-size: 16px">支付</button>
+        <button type="submit" class=" js-ajax-submit" style="background: #e0e000;text-align: center;line-height: 55px;height: 55px;width: 100%;color: #333;font-size: 16px">支付</button>
     </div>
 
     </form>
 </div>
+
+<script src="__STATIC__/js/admin.js"></script>
 <script>
     $(document).ready(function () {
         var change = $('.change');
@@ -90,9 +96,12 @@
         change.click(function (i) {
             change.removeClass('cur');
             $(this).addClass('cur');
-        })
+        });
+
     })
-    
+
+
+
 </script>
 </body>
 </html>

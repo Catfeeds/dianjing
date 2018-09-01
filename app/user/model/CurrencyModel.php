@@ -49,4 +49,25 @@ class CurrencyModel extends Model
         $data['grade'] = explode(',',$data['grade']);
         return $data;
     }
+
+    /**
+     * 获取可用id
+     * @return array
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function gitId()
+    {
+        $where = array(
+            'status'     => 1,
+            'deletetime' => 1,
+        );
+        $data = $this
+            -> field('id')
+            -> where($where)
+            -> select()
+            -> toArray();
+        return $data;
+    }
 }

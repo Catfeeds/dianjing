@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:43:"themes/simpleboot3/user\recharge\index.html";i:1535530907;s:67:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\head.html";i:1534385458;s:71:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\function.html";i:1534385458;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:43:"themes/simpleboot3/user\recharge\index.html";i:1535600107;s:67:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\head.html";i:1534385458;s:71:"E:\xampp\htdocs\dianjing\public\themes\simpleboot3\public\function.html";i:1534385458;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,12 +134,16 @@ function _sp_helloworld3(){
             <p style="font-size: 14px; color: #333;padding-left: 10px;height: 44px; line-height: 44px;margin-top: -10px">支付方式</p>
             <p id="1_zfb" class="payway">
                 <img src="/themes/simpleboot3/public/assets/images/dianjing/zfb-b.png" style="height: 34px;margin-top: 5px">
+                <input type="radio" name="pay" id="pay1"
+                       value="1" style="display: none;" checked>
                 <span class="payactive">
                 </span>
             </p>
 
             <p id="2_wx" class="payway">
                 <img src="/themes/simpleboot3/public/assets/images/dianjing/wx.png" style="height: 34px;margin-top: 5px">
+                <input type="radio" name="pay" id="pay2"
+                       value="2" style="display: none;">
                 <span class="">
                 </span>
             </p>
@@ -163,9 +167,12 @@ function _sp_helloworld3(){
         change.click(function (i) {
             change.removeClass('cur');
             $(this).addClass('cur');
-        })
+        });
+
     })
-    
+
+
+
 </script>
 </body>
 </html>

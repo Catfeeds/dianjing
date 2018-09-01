@@ -37,7 +37,7 @@
         <img src="{:$data.icon}"  ><span>{:empty($user['gold']['number'])?'0.00':$user['gold']['number']}</span>
 
     </div>
-    <form action="{:cmf_url('recharge/takePost')}" method="post">
+    <form action="{:cmf_url('recharge/takePost')}" method="post" class="js-ajax-form">
         <input type="hidden" name="type" value="2">
     <ul>
         <volist name="data['grade']" id="vo">
@@ -58,10 +58,12 @@
         <p style="font-size: 16px;color: #333;text-align: center;margin-top: 25px;margin-bottom: 100px" id="recharge">钻石不足,前往购买>></p>
         
     <div class="pay" style=" width: 100%;position: fixed;bottom: 0">
-        <button type="submit" style="background: #e0e000;text-align: center;line-height: 55px;height: 55px;width: 100%;color: #333;font-size: 16px">兑换</button>
+        <button type="submit" class="js-ajax-submit" style="background: #e0e000;text-align: center;line-height: 55px;height: 55px;width: 100%;color: #333;font-size: 16px">兑换</button>
     </div>
     </form>
 </div>
+
+<script src="__STATIC__/js/admin.js"></script>
 <script>
     $(document).ready(function () {
         var change = $('.change');

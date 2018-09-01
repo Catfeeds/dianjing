@@ -57,10 +57,12 @@ class RechargeController extends HomeBaseController
         if ($this -> request -> isPost())
         {
             $param = $this -> request -> param();
-            if (empty($param['type']) || empty($param['number']))
+            $result = $this -> validate($param,'recharge');
+            if ($result!==true)
             {
-                $this -> error('缺少参数');
+                $this -> error($result);
             }
+            
             $data = explode(',',$param['number']);
             $user = session('user');
             switch ($param['type'])
@@ -70,12 +72,13 @@ class RechargeController extends HomeBaseController
 
 
                     $array = array(
-                        'type'      => $param['type'],
-                        'user_id'   => $user['id'],
-                        'ratio'     => $data[0],
-                        'number'    => $data[1],
-                        'diamond'   => $user['diamond'],
-                        'gold'      => $user['gold'],
+                        'type'          => $param['type'],
+                        'user_id'       => $user['id'],
+                        'ratio'         => $data[0],
+                        'number'        => $data[1],
+                        'diamond'       => $user['diamond'],
+                        'gold'          => $user['gold'],
+                        'currency_id'   => 1,
                     );
                     break;
                 // 兑换
@@ -87,12 +90,13 @@ class RechargeController extends HomeBaseController
                         $this -> error('您的砖石不足');
                     }
                     $array  = array(
-                        'type'      => $param['type'],
-                        'user_id'   => $user['id'],
-                        'ratio'     => $data[0],
-                        'number'    => $data[1],
-                        'diamond'   => $user['diamond'],
-                        'gold'      => $user['gold'],
+                        'type'          => $param['type'],
+                        'user_id'       => $user['id'],
+                        'ratio'         => $data[0],
+                        'number'        => $data[1],
+                        'diamond'       => $user['diamond'],
+                        'gold'          => $user['gold'],
+                        'currency_id'   => 2,
                     );
                     break;
                 default:

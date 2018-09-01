@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:47:"themes/admin_simpleboot3/admin\goods\index.html";i:1534416721;s:75:"E:\xampp\htdocs\thinkcmf\public\themes\admin_simpleboot3\public\header.html";i:1534389699;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:47:"themes/admin_simpleboot3/admin\goods\index.html";i:1534416721;s:75:"E:\xampp\htdocs\dianjing\public\themes\admin_simpleboot3\public\header.html";i:1534389699;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>

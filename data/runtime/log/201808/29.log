@@ -4671,3 +4671,1506 @@
 [ sql ] [ SQL ] SELECT * FROM `dj_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
 [ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `dj_user` LIMIT 1 [ RunTime:0.001000s ]
 [ sql ] [ SQL ] SELECT * FROM `dj_user` ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-29T17:20:40+08:00 ] 127.0.0.1 GET /portal/index/index/type/1.html
+[ info ] mythinkcmf.com/portal/index/index/type/1.html [运行时间：0.251015s][吞吐率：3.98req/s] [内存消耗：3,823.58kb] [文件加载：81]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'portal',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/portal/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'type' => '1',
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.004001s ]
+[ info ] [ RUN ] app\portal\controller\IndexController->index[ E:\xampp\htdocs\dianjing\app\portal\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] themes/simpleboot3/portal\index\index.html [ array (
+  0 => 'site_info',
+  1 => 'type',
+  2 => 'data',
+  3 => 'page',
+  4 => 'theme_vars',
+  5 => 'theme_widgets',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=dianjing;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_match` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `dj_match` `a` INNER JOIN `dj_classify` `b` ON `a`.`classify_id`=`b`.`id` INNER JOIN `dj_match_disc` `c` ON `a`.`disc_id`=`c`.`id` INNER JOIN `dj_war_team` `d` ON `a`.`warA`=`d`.`id` INNER JOIN `dj_war_team` `e` ON `a`.`warB`=`e`.`id` WHERE  `a`.`deletetime` = 1  AND `a`.`status` <> 3  AND `b`.`id` = '1' LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`startTime`,`a`.`is_live`,`a`.`bet_num`,`a`.`url_status`,b.icon as Cicon,b.name as classify,c.name as disc,d.name as Aname,d.icon as Aicon,e.name as Bname,e.icon as Bicon FROM `dj_match` `a` INNER JOIN `dj_classify` `b` ON `a`.`classify_id`=`b`.`id` INNER JOIN `dj_match_disc` `c` ON `a`.`disc_id`=`c`.`id` INNER JOIN `dj_war_team` `d` ON `a`.`warA`=`d`.`id` INNER JOIN `dj_war_team` `e` ON `a`.`warB`=`e`.`id` WHERE  `a`.`deletetime` = 1  AND `a`.`status` <> 3  AND `b`.`id` = '1' LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme_file` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Config',`file`='public/config',`name`='模板全局配置',`more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`config_more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`description`='模板全局配置文件',`is_public`=1,`list_order`=0  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Nav',`file`='public/nav',`name`='导航条',`more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"dianjing\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`config_more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"ThinkCMF\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`description`='导航条模板文件',`is_public`=1,`list_order`=1  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] UPDATE `dj_theme`  SET `name`='simpleboot3',`version`='1.0.2',`demo_url`='http://demo.thinkcmf.com',`author`='ThinkCMF',`lang`='zh-cn',`author_url`='http://www.thinkcmf.com',`keywords`='ThinkCMF模板',`description`='ThinkCMF默认模板'  WHERE  `theme` = 'simpleboot3' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `more` FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND (  `is_public` = 1 OR `file` = 'portal/index/index' ) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-29T17:20:41+08:00 ] 127.0.0.1 GET /portal/index/index/type/4.html
+[ info ] mythinkcmf.com/portal/index/index/type/4.html [运行时间：0.290016s][吞吐率：3.45req/s] [内存消耗：3,823.51kb] [文件加载：81]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.006000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'portal',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/portal/index/index/type/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'type' => '4',
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.003000s ]
+[ info ] [ RUN ] app\portal\controller\IndexController->index[ E:\xampp\htdocs\dianjing\app\portal\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] themes/simpleboot3/portal\index\index.html [ array (
+  0 => 'site_info',
+  1 => 'type',
+  2 => 'data',
+  3 => 'page',
+  4 => 'theme_vars',
+  5 => 'theme_widgets',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016001s ] mysql:host=127.0.0.1;port=3306;dbname=dianjing;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_match` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `dj_match` `a` INNER JOIN `dj_classify` `b` ON `a`.`classify_id`=`b`.`id` INNER JOIN `dj_match_disc` `c` ON `a`.`disc_id`=`c`.`id` INNER JOIN `dj_war_team` `d` ON `a`.`warA`=`d`.`id` INNER JOIN `dj_war_team` `e` ON `a`.`warB`=`e`.`id` WHERE  `a`.`deletetime` = 1  AND `a`.`status` <> 3  AND `b`.`id` = '4' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`startTime`,`a`.`is_live`,`a`.`bet_num`,`a`.`url_status`,b.icon as Cicon,b.name as classify,c.name as disc,d.name as Aname,d.icon as Aicon,e.name as Bname,e.icon as Bicon FROM `dj_match` `a` INNER JOIN `dj_classify` `b` ON `a`.`classify_id`=`b`.`id` INNER JOIN `dj_match_disc` `c` ON `a`.`disc_id`=`c`.`id` INNER JOIN `dj_war_team` `d` ON `a`.`warA`=`d`.`id` INNER JOIN `dj_war_team` `e` ON `a`.`warB`=`e`.`id` WHERE  `a`.`deletetime` = 1  AND `a`.`status` <> 3  AND `b`.`id` = '4' LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme_file` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Config',`file`='public/config',`name`='模板全局配置',`more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`config_more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`description`='模板全局配置文件',`is_public`=1,`list_order`=0  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Nav',`file`='public/nav',`name`='导航条',`more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"dianjing\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`config_more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"ThinkCMF\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`description`='导航条模板文件',`is_public`=1,`list_order`=1  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme`  SET `name`='simpleboot3',`version`='1.0.2',`demo_url`='http://demo.thinkcmf.com',`author`='ThinkCMF',`lang`='zh-cn',`author_url`='http://www.thinkcmf.com',`keywords`='ThinkCMF模板',`description`='ThinkCMF默认模板'  WHERE  `theme` = 'simpleboot3' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `more` FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND (  `is_public` = 1 OR `file` = 'portal/index/index' ) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-29T17:20:42+08:00 ] 127.0.0.1 GET /portal/classify/index.html
+[ info ] mythinkcmf.com/portal/classify/index.html [运行时间：0.243014s][吞吐率：4.11req/s] [内存消耗：3,745.14kb] [文件加载：78]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'portal',
+    1 => 'classify',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/portal/index/index/type/4.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.002000s ]
+[ info ] [ RUN ] app\portal\controller\ClassifyController->index[ E:\xampp\htdocs\dianjing\app\portal\controller\ClassifyController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] themes/simpleboot3/portal\classify\index.html [ array (
+  0 => 'site_info',
+  1 => 'classify',
+  2 => 'theme_vars',
+  3 => 'theme_widgets',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=dianjing;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_classify` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`icon` FROM `dj_classify` WHERE  `parent_id` = 0  AND `status` = 1  AND `deletetime` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme_file` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Config',`file`='public/config',`name`='模板全局配置',`more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`config_more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`description`='模板全局配置文件',`is_public`=1,`list_order`=0  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Nav',`file`='public/nav',`name`='导航条',`more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"dianjing\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`config_more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"ThinkCMF\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`description`='导航条模板文件',`is_public`=1,`list_order`=1  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] UPDATE `dj_theme`  SET `name`='simpleboot3',`version`='1.0.2',`demo_url`='http://demo.thinkcmf.com',`author`='ThinkCMF',`lang`='zh-cn',`author_url`='http://www.thinkcmf.com',`keywords`='ThinkCMF模板',`description`='ThinkCMF默认模板'  WHERE  `theme` = 'simpleboot3' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `more` FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND (  `is_public` = 1 OR `file` = 'portal/classify/index' ) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-29T17:20:44+08:00 ] 127.0.0.1 POST /portal/classify/save.html
+[ info ] mythinkcmf.com/portal/classify/save.html [运行时间：0.079004s][吞吐率：12.66req/s] [内存消耗：3,287.72kb] [文件加载：71]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.004001s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'portal',
+    1 => 'classify',
+    2 => 'save',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'content-length' => '20',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://mythinkcmf.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://mythinkcmf.com/portal/classify/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'classify_id' => 
+  array (
+    1 => '1',
+  ),
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.003000s ]
+[ info ] [ RUN ] app\portal\controller\ClassifyController->save[ E:\xampp\htdocs\dianjing\app\portal\controller\ClassifyController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-29T17:20:46+08:00 ] 127.0.0.1 GET /portal/index/index.html
+[ info ] mythinkcmf.com/portal/index/index.html [运行时间：0.260015s][吞吐率：3.85req/s] [内存消耗：3,833.49kb] [文件加载：81]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.006000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'portal',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/portal/classify/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.002000s ]
+[ info ] [ RUN ] app\portal\controller\IndexController->index[ E:\xampp\htdocs\dianjing\app\portal\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] themes/simpleboot3/portal\index\index.html [ array (
+  0 => 'site_info',
+  1 => 'type',
+  2 => 'data',
+  3 => 'page',
+  4 => 'theme_vars',
+  5 => 'theme_widgets',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;port=3306;dbname=dianjing;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_match` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `dj_match` `a` INNER JOIN `dj_classify` `b` ON `a`.`classify_id`=`b`.`id` INNER JOIN `dj_match_disc` `c` ON `a`.`disc_id`=`c`.`id` INNER JOIN `dj_war_team` `d` ON `a`.`warA`=`d`.`id` INNER JOIN `dj_war_team` `e` ON `a`.`warB`=`e`.`id` WHERE  `a`.`deletetime` = 1  AND `a`.`status` <> 3 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`startTime`,`a`.`is_live`,`a`.`bet_num`,`a`.`url_status`,b.icon as Cicon,b.name as classify,c.name as disc,d.name as Aname,d.icon as Aicon,e.name as Bname,e.icon as Bicon FROM `dj_match` `a` INNER JOIN `dj_classify` `b` ON `a`.`classify_id`=`b`.`id` INNER JOIN `dj_match_disc` `c` ON `a`.`disc_id`=`c`.`id` INNER JOIN `dj_war_team` `d` ON `a`.`warA`=`d`.`id` INNER JOIN `dj_war_team` `e` ON `a`.`warB`=`e`.`id` WHERE  `a`.`deletetime` = 1  AND `a`.`status` <> 3 LIMIT 0,10 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme_file` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Config',`file`='public/config',`name`='模板全局配置',`more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`config_more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`description`='模板全局配置文件',`is_public`=1,`list_order`=0  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Nav',`file`='public/nav',`name`='导航条',`more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"dianjing\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`config_more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"ThinkCMF\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`description`='导航条模板文件',`is_public`=1,`list_order`=1  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] UPDATE `dj_theme`  SET `name`='simpleboot3',`version`='1.0.2',`demo_url`='http://demo.thinkcmf.com',`author`='ThinkCMF',`lang`='zh-cn',`author_url`='http://www.thinkcmf.com',`keywords`='ThinkCMF模板',`description`='ThinkCMF默认模板'  WHERE  `theme` = 'simpleboot3' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `more` FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND (  `is_public` = 1 OR `file` = 'portal/index/index' ) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-29T17:20:49+08:00 ] 127.0.0.1 GET /user/personal/index.html
+[ info ] mythinkcmf.com/user/personal/index.html [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：2,206.44kb] [文件加载：61]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.004001s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'personal',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/portal/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/user\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.002001s ]
+[ info ] [ RUN ] app\user\controller\PersonalController->index[ E:\xampp\htdocs\dianjing\app\user\controller\PersonalController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-29T17:20:49+08:00 ] 127.0.0.1 GET /user/login/index.html
+[ info ] mythinkcmf.com/user/login/index.html [运行时间：0.219012s][吞吐率：4.57req/s] [内存消耗：3,689.57kb] [文件加载：76]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.007000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/portal/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.003001s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/user\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.003000s ]
+[ info ] [ RUN ] app\user\controller\LoginController->index[ E:\xampp\htdocs\dianjing\app\user\controller\LoginController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] themes/simpleboot3/user\login\index.html [ array (
+  0 => 'site_info',
+  1 => 'theme_vars',
+  2 => 'theme_widgets',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=dianjing;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme_file` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Config',`file`='public/config',`name`='模板全局配置',`more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`config_more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`description`='模板全局配置文件',`is_public`=1,`list_order`=0  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Nav',`file`='public/nav',`name`='导航条',`more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"dianjing\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`config_more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"ThinkCMF\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`description`='导航条模板文件',`is_public`=1,`list_order`=1  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme`  SET `name`='simpleboot3',`version`='1.0.2',`demo_url`='http://demo.thinkcmf.com',`author`='ThinkCMF',`lang`='zh-cn',`author_url`='http://www.thinkcmf.com',`keywords`='ThinkCMF模板',`description`='ThinkCMF默认模板'  WHERE  `theme` = 'simpleboot3' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `more` FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND (  `is_public` = 1 OR `file` = 'user/login/index' ) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-29T17:20:49+08:00 ] 127.0.0.1 GET /themes/simpleboot3/public/assets/images/dianjing/leida_logo_white.png
+[ info ] mythinkcmf.com/themes/simpleboot3/public/assets/images/dianjing/leida_logo_white.png [运行时间：0.093005s][吞吐率：10.75req/s] [内存消耗：1,829.10kb] [文件加载：51]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.009000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'themes',
+    1 => 'simpleboot3',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/user/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'assets' => 'images',
+  'dianjing' => 'leida_logo_white.png',
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.006000s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-29T17:20:49+08:00 ] 127.0.0.1 GET /captcha/new.html?height=38&width=160&font_size=20
+[ info ] mythinkcmf.com/captcha/new.html?height=38&width=160&font_size=20 [运行时间：0.083005s][吞吐率：12.05req/s] [内存消耗：1,845.32kb] [文件加载：48]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.021001s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\cmf\\controller\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/user/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'height' => '38',
+  'width' => '160',
+  'font_size' => '20',
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.007001s ]
+[ info ] [ RUN ] cmf\controller\CaptchaController->index[ E:\xampp\htdocs\dianjing\simplewind\cmf\controller\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-29T17:20:52+08:00 ] 127.0.0.1 GET /user/register/index.html
+[ info ] mythinkcmf.com/user/register/index.html [运行时间：0.212012s][吞吐率：4.72req/s] [内存消耗：3,616.41kb] [文件加载：73]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.005001s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'register',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/user/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.005000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/user\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.004000s ]
+[ info ] [ RUN ] app\user\controller\RegisterController->index[ E:\xampp\htdocs\dianjing\app\user\controller\RegisterController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] themes/simpleboot3/user\register\index.html [ array (
+  0 => 'site_info',
+  1 => 'theme_vars',
+  2 => 'theme_widgets',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=dianjing;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme_file` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Config',`file`='public/config',`name`='模板全局配置',`more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`config_more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`description`='模板全局配置文件',`is_public`=1,`list_order`=0  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Nav',`file`='public/nav',`name`='导航条',`more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"dianjing\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`config_more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"ThinkCMF\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`description`='导航条模板文件',`is_public`=1,`list_order`=1  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] UPDATE `dj_theme`  SET `name`='simpleboot3',`version`='1.0.2',`demo_url`='http://demo.thinkcmf.com',`author`='ThinkCMF',`lang`='zh-cn',`author_url`='http://www.thinkcmf.com',`keywords`='ThinkCMF模板',`description`='ThinkCMF默认模板'  WHERE  `theme` = 'simpleboot3' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `more` FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND (  `is_public` = 1 OR `file` = 'user/register/index' ) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-29T17:20:52+08:00 ] 127.0.0.1 GET /themes/simpleboot3/public/assets/images/dianjing/leida_logo.png
+[ info ] mythinkcmf.com/themes/simpleboot3/public/assets/images/dianjing/leida_logo.png [运行时间：0.082004s][吞吐率：12.19req/s] [内存消耗：1,829.08kb] [文件加载：51]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.007000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'themes',
+    1 => 'simpleboot3',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/user/register/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'assets' => 'images',
+  'dianjing' => 'leida_logo.png',
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.004001s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-29T17:20:57+08:00 ] 127.0.0.1 GET /user/login/index.html
+[ info ] mythinkcmf.com/user/login/index.html [运行时间：0.237013s][吞吐率：4.22req/s] [内存消耗：3,689.57kb] [文件加载：76]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.005001s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/user/register/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/user\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.002000s ]
+[ info ] [ RUN ] app\user\controller\LoginController->index[ E:\xampp\htdocs\dianjing\app\user\controller\LoginController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] themes/simpleboot3/user\login\index.html [ array (
+  0 => 'site_info',
+  1 => 'theme_vars',
+  2 => 'theme_widgets',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002001s ] mysql:host=127.0.0.1;port=3306;dbname=dianjing;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme_file` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Config',`file`='public/config',`name`='模板全局配置',`more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`config_more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`description`='模板全局配置文件',`is_public`=1,`list_order`=0  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Nav',`file`='public/nav',`name`='导航条',`more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"dianjing\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`config_more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"ThinkCMF\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`description`='导航条模板文件',`is_public`=1,`list_order`=1  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme`  SET `name`='simpleboot3',`version`='1.0.2',`demo_url`='http://demo.thinkcmf.com',`author`='ThinkCMF',`lang`='zh-cn',`author_url`='http://www.thinkcmf.com',`keywords`='ThinkCMF模板',`description`='ThinkCMF默认模板'  WHERE  `theme` = 'simpleboot3' [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT `more` FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND (  `is_public` = 1 OR `file` = 'user/login/index' ) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-29T17:20:58+08:00 ] 127.0.0.1 GET /captcha/new.html?height=38&width=160&font_size=20
+[ info ] mythinkcmf.com/captcha/new.html?height=38&width=160&font_size=20 [运行时间：0.091005s][吞吐率：10.99req/s] [内存消耗：1,845.36kb] [文件加载：48]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.008001s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\cmf\\controller\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/user/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'height' => '38',
+  'width' => '160',
+  'font_size' => '20',
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.005000s ]
+[ info ] [ RUN ] cmf\controller\CaptchaController->index[ E:\xampp\htdocs\dianjing\simplewind\cmf\controller\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-29T17:20:58+08:00 ] 127.0.0.1 GET /themes/simpleboot3/public/assets/images/dianjing/leida_logo_white.png
+[ info ] mythinkcmf.com/themes/simpleboot3/public/assets/images/dianjing/leida_logo_white.png [运行时间：0.096005s][吞吐率：10.42req/s] [内存消耗：1,829.10kb] [文件加载：51]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.019001s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'themes',
+    1 => 'simpleboot3',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/user/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'assets' => 'images',
+  'dianjing' => 'leida_logo_white.png',
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.005000s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-29T17:21:00+08:00 ] 127.0.0.1 GET /user/login/findpassword.html
+[ info ] mythinkcmf.com/user/login/findpassword.html [运行时间：0.253015s][吞吐率：3.95req/s] [内存消耗：3,684.33kb] [文件加载：76]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.005000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'login',
+    2 => 'findpassword',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/user/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.004001s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/user\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.002000s ]
+[ info ] [ RUN ] app\user\controller\LoginController->findPassword[ E:\xampp\htdocs\dianjing\app\user\controller\LoginController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] themes/simpleboot3/user\login\find_password.html [ array (
+  0 => 'site_info',
+  1 => 'theme_vars',
+  2 => 'theme_widgets',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=dianjing;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme_file` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Config',`file`='public/config',`name`='模板全局配置',`more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`config_more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`description`='模板全局配置文件',`is_public`=1,`list_order`=0  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Nav',`file`='public/nav',`name`='导航条',`more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"dianjing\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`config_more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"ThinkCMF\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`description`='导航条模板文件',`is_public`=1,`list_order`=1  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] UPDATE `dj_theme`  SET `name`='simpleboot3',`version`='1.0.2',`demo_url`='http://demo.thinkcmf.com',`author`='ThinkCMF',`lang`='zh-cn',`author_url`='http://www.thinkcmf.com',`keywords`='ThinkCMF模板',`description`='ThinkCMF默认模板'  WHERE  `theme` = 'simpleboot3' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `more` FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND (  `is_public` = 1 OR `file` = 'user/login/find_password' ) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-29T17:21:00+08:00 ] 127.0.0.1 GET /themes/simpleboot3/public/assets/images/dianjing/leida_logo.png
+[ info ] mythinkcmf.com/themes/simpleboot3/public/assets/images/dianjing/leida_logo.png [运行时间：0.075004s][吞吐率：13.33req/s] [内存消耗：1,829.06kb] [文件加载：51]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.011001s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'themes',
+    1 => 'simpleboot3',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/user/login/findpassword.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'assets' => 'images',
+  'dianjing' => 'leida_logo.png',
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.004000s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-29T17:21:03+08:00 ] 127.0.0.1 GET /user/login/index.html
+[ info ] mythinkcmf.com/user/login/index.html [运行时间：0.233013s][吞吐率：4.29req/s] [内存消耗：3,689.56kb] [文件加载：76]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/user/login/findpassword.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/user\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.002000s ]
+[ info ] [ RUN ] app\user\controller\LoginController->index[ E:\xampp\htdocs\dianjing\app\user\controller\LoginController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] themes/simpleboot3/user\login\index.html [ array (
+  0 => 'site_info',
+  1 => 'theme_vars',
+  2 => 'theme_widgets',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=dianjing;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme_file` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Config',`file`='public/config',`name`='模板全局配置',`more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`config_more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`description`='模板全局配置文件',`is_public`=1,`list_order`=0  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Nav',`file`='public/nav',`name`='导航条',`more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"dianjing\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`config_more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"ThinkCMF\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`description`='导航条模板文件',`is_public`=1,`list_order`=1  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] UPDATE `dj_theme`  SET `name`='simpleboot3',`version`='1.0.2',`demo_url`='http://demo.thinkcmf.com',`author`='ThinkCMF',`lang`='zh-cn',`author_url`='http://www.thinkcmf.com',`keywords`='ThinkCMF模板',`description`='ThinkCMF默认模板'  WHERE  `theme` = 'simpleboot3' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `more` FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND (  `is_public` = 1 OR `file` = 'user/login/index' ) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-29T17:21:03+08:00 ] 127.0.0.1 GET /themes/simpleboot3/public/assets/images/dianjing/leida_logo_white.png
+[ info ] mythinkcmf.com/themes/simpleboot3/public/assets/images/dianjing/leida_logo_white.png [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：1,829.10kb] [文件加载：51]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.007000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'themes',
+    1 => 'simpleboot3',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/user/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'assets' => 'images',
+  'dianjing' => 'leida_logo_white.png',
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.004000s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-29T17:21:03+08:00 ] 127.0.0.1 GET /captcha/new.html?height=38&width=160&font_size=20
+[ info ] mythinkcmf.com/captcha/new.html?height=38&width=160&font_size=20 [运行时间：0.080005s][吞吐率：12.50req/s] [内存消耗：1,845.33kb] [文件加载：48]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.009000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\cmf\\controller\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/user/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'height' => '38',
+  'width' => '160',
+  'font_size' => '20',
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.004000s ]
+[ info ] [ RUN ] cmf\controller\CaptchaController->index[ E:\xampp\htdocs\dianjing\simplewind\cmf\controller\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-29T17:21:06+08:00 ] 127.0.0.1 GET /portal/index/index.html
+[ info ] mythinkcmf.com/portal/index/index.html [运行时间：0.254014s][吞吐率：3.94req/s] [内存消耗：3,833.50kb] [文件加载：81]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.007001s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'portal',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/user/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.003000s ]
+[ info ] [ RUN ] app\portal\controller\IndexController->index[ E:\xampp\htdocs\dianjing\app\portal\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] themes/simpleboot3/portal\index\index.html [ array (
+  0 => 'site_info',
+  1 => 'type',
+  2 => 'data',
+  3 => 'page',
+  4 => 'theme_vars',
+  5 => 'theme_widgets',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=dianjing;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_match` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `dj_match` `a` INNER JOIN `dj_classify` `b` ON `a`.`classify_id`=`b`.`id` INNER JOIN `dj_match_disc` `c` ON `a`.`disc_id`=`c`.`id` INNER JOIN `dj_war_team` `d` ON `a`.`warA`=`d`.`id` INNER JOIN `dj_war_team` `e` ON `a`.`warB`=`e`.`id` WHERE  `a`.`deletetime` = 1  AND `a`.`status` <> 3 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`startTime`,`a`.`is_live`,`a`.`bet_num`,`a`.`url_status`,b.icon as Cicon,b.name as classify,c.name as disc,d.name as Aname,d.icon as Aicon,e.name as Bname,e.icon as Bicon FROM `dj_match` `a` INNER JOIN `dj_classify` `b` ON `a`.`classify_id`=`b`.`id` INNER JOIN `dj_match_disc` `c` ON `a`.`disc_id`=`c`.`id` INNER JOIN `dj_war_team` `d` ON `a`.`warA`=`d`.`id` INNER JOIN `dj_war_team` `e` ON `a`.`warB`=`e`.`id` WHERE  `a`.`deletetime` = 1  AND `a`.`status` <> 3 LIMIT 0,10 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme_file` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Config',`file`='public/config',`name`='模板全局配置',`more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`config_more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`description`='模板全局配置文件',`is_public`=1,`list_order`=0  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Nav',`file`='public/nav',`name`='导航条',`more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"dianjing\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`config_more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"ThinkCMF\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`description`='导航条模板文件',`is_public`=1,`list_order`=1  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme`  SET `name`='simpleboot3',`version`='1.0.2',`demo_url`='http://demo.thinkcmf.com',`author`='ThinkCMF',`lang`='zh-cn',`author_url`='http://www.thinkcmf.com',`keywords`='ThinkCMF模板',`description`='ThinkCMF默认模板'  WHERE  `theme` = 'simpleboot3' [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `more` FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND (  `is_public` = 1 OR `file` = 'portal/index/index' ) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-29T18:26:57+08:00 ] 127.0.0.1 GET /user/admin_index/index.html
+[ info ] mythinkcmf.com/user/admin_index/index.html [运行时间：0.122007s][吞吐率：8.20req/s] [内存消耗：3,336.29kb] [文件加载：77]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.006000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'admin_index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/dianjing.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/user\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.005000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\user\controller\AdminIndexController->index[ E:\xampp\htdocs\dianjing\app\user\controller\AdminIndexController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/user\admin_index\index.html [ array (
+  0 => 'admin',
+  1 => 'list',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=dianjing;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_user` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `dj_user` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_user` ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-29T18:26:58+08:00 ] 127.0.0.1 GET /user/public/avatar/id/1.html
+[ info ] mythinkcmf.com/user/public/avatar/id/1.html [运行时间：0.113007s][吞吐率：8.85req/s] [内存消耗：3,238.67kb] [文件加载：66]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.007000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'public',
+    2 => 'avatar',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/user/admin_index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/user\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.003000s ]
+[ info ] [ RUN ] app\user\controller\PublicController->avatar[ E:\xampp\htdocs\dianjing\app\user\controller\PublicController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=dianjing;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_user` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-29T18:26:58+08:00 ] 127.0.0.1 GET /user/public/avatar/id/2.html
+[ info ] mythinkcmf.com/user/public/avatar/id/2.html [运行时间：0.134008s][吞吐率：7.46req/s] [内存消耗：3,238.73kb] [文件加载：66]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.013001s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'public',
+    2 => 'avatar',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/user/admin_index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.005000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/user\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.004001s ]
+[ info ] [ RUN ] app\user\controller\PublicController->avatar[ E:\xampp\htdocs\dianjing\app\user\controller\PublicController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=dianjing;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_user` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_user` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-29T19:26:03+08:00 ] 127.0.0.1 GET /admin/public/logout.html
+[ info ] mythinkcmf.com/admin/public/logout.html [运行时间：0.064003s][吞吐率：15.62req/s] [内存消耗：2,227.89kb] [文件加载：59]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.005000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'public',
+    2 => 'logout',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/dianjing.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn.php
+[ info ] [ RUN ] app\admin\controller\PublicController->logout[ E:\xampp\htdocs\dianjing\app\admin\controller\PublicController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-29T19:26:03+08:00 ] 127.0.0.1 GET /
+[ info ] mythinkcmf.com/ [运行时间：0.301017s][吞吐率：3.32req/s] [内存消耗：3,829.36kb] [文件加载：81]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.006001s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/dianjing.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.005000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.004000s ]
+[ info ] [ RUN ] app\portal\controller\IndexController->index[ E:\xampp\htdocs\dianjing\app\portal\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] themes/simpleboot3/portal\index\index.html [ array (
+  0 => 'site_info',
+  1 => 'type',
+  2 => 'data',
+  3 => 'page',
+  4 => 'theme_vars',
+  5 => 'theme_widgets',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=dianjing;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_match` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `dj_match` `a` INNER JOIN `dj_classify` `b` ON `a`.`classify_id`=`b`.`id` INNER JOIN `dj_match_disc` `c` ON `a`.`disc_id`=`c`.`id` INNER JOIN `dj_war_team` `d` ON `a`.`warA`=`d`.`id` INNER JOIN `dj_war_team` `e` ON `a`.`warB`=`e`.`id` WHERE  `a`.`deletetime` = 1  AND `a`.`status` <> 3 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`startTime`,`a`.`is_live`,`a`.`bet_num`,`a`.`url_status`,b.icon as Cicon,b.name as classify,c.name as disc,d.name as Aname,d.icon as Aicon,e.name as Bname,e.icon as Bicon FROM `dj_match` `a` INNER JOIN `dj_classify` `b` ON `a`.`classify_id`=`b`.`id` INNER JOIN `dj_match_disc` `c` ON `a`.`disc_id`=`c`.`id` INNER JOIN `dj_war_team` `d` ON `a`.`warA`=`d`.`id` INNER JOIN `dj_war_team` `e` ON `a`.`warB`=`e`.`id` WHERE  `a`.`deletetime` = 1  AND `a`.`status` <> 3 LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme_file` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Config',`file`='public/config',`name`='模板全局配置',`more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`config_more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`description`='模板全局配置文件',`is_public`=1,`list_order`=0  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/config' [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `dj_theme_file`  SET `theme`='simpleboot3',`action`='public/Nav',`file`='public/nav',`name`='导航条',`more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"dianjing\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`config_more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"ThinkCMF\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`description`='导航条模板文件',`is_public`=1,`list_order`=1  WHERE  `theme` = 'simpleboot3'  AND `file` = 'public/nav' [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dj_theme` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] UPDATE `dj_theme`  SET `name`='simpleboot3',`version`='1.0.2',`demo_url`='http://demo.thinkcmf.com',`author`='ThinkCMF',`lang`='zh-cn',`author_url`='http://www.thinkcmf.com',`keywords`='ThinkCMF模板',`description`='ThinkCMF默认模板'  WHERE  `theme` = 'simpleboot3' [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `more` FROM `dj_theme_file` WHERE  `theme` = 'simpleboot3'  AND (  `is_public` = 1 OR `file` = 'portal/index/index' ) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-29T19:26:09+08:00 ] 127.0.0.1 GET /dianjing
+[ info ] mythinkcmf.com/dianjing [运行时间：0.056004s][吞吐率：17.86req/s] [内存消耗：2,205.52kb] [文件加载：61]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.006000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.005000s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-29T19:26:09+08:00 ] 127.0.0.1 GET /admin/public/login.html
+[ info ] mythinkcmf.com/admin/public/login.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：2,448.03kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.005001s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'public',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn.php
+[ info ] [ RUN ] app\admin\controller\PublicController->login[ E:\xampp\htdocs\dianjing\app\admin\controller\PublicController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] themes/admin_simpleboot3/admin\\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-29T19:26:09+08:00 ] 127.0.0.1 GET /captcha/new.html?height=32&width=150&font_size=18
+[ info ] mythinkcmf.com/captcha/new.html?height=32&width=150&font_size=18 [运行时间：0.068004s][吞吐率：14.70req/s] [内存消耗：1,845.30kb] [文件加载：48]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.007000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\cmf\\controller\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/admin/public/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'height' => '32',
+  'width' => '150',
+  'font_size' => '18',
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.005000s ]
+[ info ] [ RUN ] cmf\controller\CaptchaController->index[ E:\xampp\htdocs\dianjing\simplewind\cmf\controller\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-29T19:26:18+08:00 ] 127.0.0.1 GET /admin
+[ info ] mythinkcmf.com/admin [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,204.77kb] [文件加载：61]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.008001s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.006000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.004000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-29T19:26:18+08:00 ] 127.0.0.1 GET /admin/public/login.html
+[ info ] mythinkcmf.com/admin/public/login.html [运行时间：0.079005s][吞吐率：12.66req/s] [内存消耗：2,448.03kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'public',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn.php
+[ info ] [ RUN ] app\admin\controller\PublicController->login[ E:\xampp\htdocs\dianjing\app\admin\controller\PublicController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] themes/admin_simpleboot3/admin\\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-29T19:26:18+08:00 ] 127.0.0.1 GET /captcha/new.html?height=32&width=150&font_size=18
+[ info ] mythinkcmf.com/captcha/new.html?height=32&width=150&font_size=18 [运行时间：0.060003s][吞吐率：16.67req/s] [内存消耗：1,845.33kb] [文件加载：48]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.007000s ]
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\cmf\\controller\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'mythinkcmf.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://mythinkcmf.com/admin/public/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'admin_username=admin; PHPSESSID=ct0v4hn7arvgfebd4b52h6jgh7; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'height' => '32',
+  'width' => '150',
+  'font_size' => '18',
+)
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\xampp\htdocs\dianjing\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.004000s ]
+[ info ] [ RUN ] cmf\controller\CaptchaController->index[ E:\xampp\htdocs\dianjing\simplewind\cmf\controller\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File

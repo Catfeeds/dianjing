@@ -75,6 +75,8 @@ class ClassifyBaseController extends AdminBaseController
         $result = $this -> Model -> save(['deletetime'=>2],['id'=>$id]);
         if ($result)
         {
+            $table_name = strtolower(preg_replace('/(?<=[a-z])([A-Z])/', '_$1', $this->controller));
+            RecycleBinController::addOne($id,$table_name,$this->title);
             $this -> success('删除成功!',url($this->controller."/index"));
         }
         else

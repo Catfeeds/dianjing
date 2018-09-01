@@ -22,10 +22,53 @@ class MainController extends AdminBaseController
         parent::_initialize();
     }
 
+
+    /**
+     * 后台欢迎页
+     * @return mixed
+     */
+    public function index()
+    {
+        $data = array();
+        //会员数
+        $data['user'] = model('user') -> where(['user_type'=>2]) -> count();
+
+        //邮箱配置
+        $smtpSetting = cmf_get_option('smtp_setting');
+
+        $this->assign('has_smtp_setting', empty($smtpSetting) ? false : true);
+
+        $this -> assign('data',$data);
+
+        return $this->fetch();
+    }
+
+
+    public function dashboardWidget()
+    {
+        $dashboardWidgets = [];
+        $widgets          = $this->request->param('widgets/a');
+        if (!empty($widgets)) {
+            foreach ($widgets as $widget) {
+                if ($widget['is_system']) {
+                    array_push($dashboardWidgets, ['name' => $widget['name'], 'is_system' => 1]);
+                } else {
+                    array_push($dashboardWidgets, ['name' => $widget['name'], 'is_system' => 0]);
+                }
+            }
+        }
+
+        cmf_set_option('admin_dashboard_widgets', $dashboardWidgets, true);
+
+        $this->success('更新成功!');
+
+    }
+
+
     /**
      *  后台欢迎页
      */
-    public function index()
+    public function index1()
     {
         $dashboardWidgets = [];
         $widgets          = cmf_get_option('admin_dashboard_widgets');
@@ -84,24 +127,5 @@ class MainController extends AdminBaseController
         return $this->fetch();
     }
 
-    public function dashboardWidget()
-    {
-        $dashboardWidgets = [];
-        $widgets          = $this->request->param('widgets/a');
-        if (!empty($widgets)) {
-            foreach ($widgets as $widget) {
-                if ($widget['is_system']) {
-                    array_push($dashboardWidgets, ['name' => $widget['name'], 'is_system' => 1]);
-                } else {
-                    array_push($dashboardWidgets, ['name' => $widget['name'], 'is_system' => 0]);
-                }
-            }
-        }
-
-        cmf_set_option('admin_dashboard_widgets', $dashboardWidgets, true);
-
-        $this->success('更新成功!');
-
-    }
 
 }

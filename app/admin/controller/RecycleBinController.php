@@ -66,7 +66,7 @@ class RecycleBinController extends AdminBaseController
         if ($result) {
             $res = Db::name($tableName)
                 ->where(['id' => $result['object_id']])
-                ->update(['delete_time' => '0']);
+                ->update(['delete_time' => '1']);
             if ($tableName =='portal_post'){
                 Db::name('portal_category_post')->where('post_id',$result['object_id'])->update(['status'=>1]);
                 Db::name('portal_tag_post')->where('post_id',$result['object_id'])->update(['status'=>1]);
@@ -124,5 +124,23 @@ class RecycleBinController extends AdminBaseController
 
             }
         }
+    }
+
+    /**
+     * 回收站添加
+     * @param string $object_id
+     * @param string $table_name
+     * @param string $name
+     */
+    public static function addOne($object_id,$table_name,$name)
+    {
+        $data         = [
+            'object_id'   => $object_id,
+            'create_time' => time(),
+            'table_name'  => $table_name,
+            'name'        => $name,
+            'user_id'=>cmf_get_current_admin_id()
+        ];
+        Db::name('recycleBin')->insert($data);
     }
 }

@@ -31,12 +31,39 @@ class UserCurrencyModel extends Model
             'status'        => 1,
             'deletetime'    => 1,
         );
+        $result = $this -> where($where) -> count();
+        if (empty($result))
+        {
+            $this -> start($user_id);
+        }
         $data  = $this
             -> field('id,number,currency_id')
             -> where($where)
-            -> select();
+            -> select()
+            -> toArray();
         return $data;
     }
+
+    /**
+     * 添加
+     * @param $user_id
+     */
+    public function  start($user_id)
+    {
+        $array = array(
+            'user_id'   => $user_id,
+            'number'    => 0,
+            'time'      => time()
+        );
+        $data  = model('currency') -> gitId() ;
+        foreach ($data as $val)
+        {
+            $array['currency_id'] = $val['id'];
+            $this -> insert($array);
+        }
+
+    }
+
 
     /**
      * 兑换|充值操作

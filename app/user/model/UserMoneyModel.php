@@ -48,8 +48,7 @@ class UserMoneyModel extends Model
      */
     public function addOne($data)
     {
-        $this -> data(
-            array(
+         $array =  array(
                 'user_id'       => $data['user_id'],
                 'currency_id'   => $data['id'],
                 'type'          => $data['type'],
@@ -57,8 +56,8 @@ class UserMoneyModel extends Model
                 'balance'       => $data['balance'],
                 'test'          => $data['test'],
                 'time'          => time(),
-            )
-        );
-        return $this -> save();
+            );
+
+        return $this -> insert($array);
     }
 }

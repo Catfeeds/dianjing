@@ -11,7 +11,7 @@
  Target Server Version : 100119
  File Encoding         : 65001
 
- Date: 29/08/2018 16:51:14
+ Date: 31/08/2018 17:26:26
 */
 
 SET NAMES utf8mb4;
@@ -38,7 +38,7 @@ CREATE TABLE `dj_admin_menu`  (
   INDEX `status`(`status`) USING BTREE,
   INDEX `parent_id`(`parent_id`) USING BTREE,
   INDEX `controller`(`controller`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 221 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '后台菜单表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 235 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '后台菜单表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of dj_admin_menu
@@ -204,7 +204,7 @@ INSERT INTO `dj_admin_menu` VALUES (158, 6, 1, 1, 10000, 'user', 'AdminUserActio
 INSERT INTO `dj_admin_menu` VALUES (159, 158, 1, 0, 10000, 'user', 'AdminUserAction', 'edit', '', '编辑用户操作', '', '编辑用户操作');
 INSERT INTO `dj_admin_menu` VALUES (160, 158, 2, 0, 10000, 'user', 'AdminUserAction', 'editPost', '', '编辑用户操作提交', '', '编辑用户操作提交');
 INSERT INTO `dj_admin_menu` VALUES (161, 158, 1, 0, 10000, 'user', 'AdminUserAction', 'sync', '', '同步用户操作', '', '同步用户操作');
-INSERT INTO `dj_admin_menu` VALUES (162, 0, 1, 1, 10000, 'admin', 'Currency', 'default', '', '虚拟币', 'money', '');
+INSERT INTO `dj_admin_menu` VALUES (162, 0, 0, 1, 10000, 'admin', 'Currency', 'default', '', '虚拟币', 'money', '');
 INSERT INTO `dj_admin_menu` VALUES (163, 162, 1, 1, 10000, 'admin', 'currency', 'index', '', '币值列表', '', '');
 INSERT INTO `dj_admin_menu` VALUES (164, 163, 1, 0, 10000, 'admin', 'Currency', 'add', '', '添加虚拟币', '', '添加虚拟币');
 INSERT INTO `dj_admin_menu` VALUES (165, 163, 2, 0, 10000, 'admin', 'Currency', 'addPost', '', '添加虚拟币保存', '', '添加虚拟币保存');
@@ -212,7 +212,7 @@ INSERT INTO `dj_admin_menu` VALUES (166, 163, 2, 0, 10000, 'admin', 'Currency', 
 INSERT INTO `dj_admin_menu` VALUES (167, 163, 2, 0, 10000, 'admin', 'Currency', 'delete', '', '删除虚拟币', '', '删除虚拟币');
 INSERT INTO `dj_admin_menu` VALUES (168, 163, 1, 0, 10000, 'admin', 'Currency', 'edit', '', '编辑虚拟币', '', '编辑虚拟币');
 INSERT INTO `dj_admin_menu` VALUES (169, 163, 2, 0, 10000, 'admin', 'Currency', 'editPost', '', '编辑虚拟币提交保存', '', '编辑虚拟币提交保存');
-INSERT INTO `dj_admin_menu` VALUES (170, 0, 1, 1, 10000, 'admin', 'goods', 'default', '', '商品', 'shopping-cart', '');
+INSERT INTO `dj_admin_menu` VALUES (170, 0, 0, 1, 10000, 'admin', 'goods', 'default', '', '商品', 'shopping-cart', '');
 INSERT INTO `dj_admin_menu` VALUES (171, 170, 1, 1, 10000, 'admin', 'goods', 'index', '', '商品列表', '', '');
 INSERT INTO `dj_admin_menu` VALUES (172, 171, 1, 0, 10000, 'admin', 'Goods', 'add', '', '添加商品', '', '添加商品');
 INSERT INTO `dj_admin_menu` VALUES (173, 171, 2, 0, 10000, 'admin', 'Goods', 'addPost', '', '添加商品保存', '', '添加商品保存');
@@ -220,7 +220,7 @@ INSERT INTO `dj_admin_menu` VALUES (174, 171, 2, 0, 10000, 'admin', 'Goods', 'up
 INSERT INTO `dj_admin_menu` VALUES (175, 171, 2, 0, 10000, 'admin', 'Goods', 'delete', '', '删除商品', '', '删除商品');
 INSERT INTO `dj_admin_menu` VALUES (176, 171, 1, 0, 10000, 'admin', 'Goods', 'edit', '', '编辑商品', '', '编辑商品');
 INSERT INTO `dj_admin_menu` VALUES (177, 171, 2, 0, 10000, 'admin', 'Goods', 'editPost', '', '编辑商品提交保存', '', '编辑商品提交保存');
-INSERT INTO `dj_admin_menu` VALUES (178, 0, 1, 1, 10000, 'admin', 'Match', 'default', '', '比赛', 'gamepad', '');
+INSERT INTO `dj_admin_menu` VALUES (178, 0, 0, 1, 10000, 'admin', 'Match', 'default', '', '比赛', 'gamepad', '');
 INSERT INTO `dj_admin_menu` VALUES (179, 178, 1, 1, 10000, 'admin', 'Match', 'index', '', '赛事管理', '', '');
 INSERT INTO `dj_admin_menu` VALUES (180, 178, 1, 1, 10000, 'admin', 'Classify', 'default', '', '各种分类', '', '');
 INSERT INTO `dj_admin_menu` VALUES (181, 192, 2, 0, 10000, 'admin', 'Classify', 'addPost', '', '添加赛事保存', '', '添加赛事保存');
@@ -257,6 +257,20 @@ INSERT INTO `dj_admin_menu` VALUES (217, 190, 2, 0, 10000, 'admin', 'WarTeam', '
 INSERT INTO `dj_admin_menu` VALUES (218, 190, 1, 0, 10000, 'admin', 'WarTeam', 'edit', '', '编辑商品', '', '编辑商品');
 INSERT INTO `dj_admin_menu` VALUES (219, 190, 2, 0, 10000, 'admin', 'WarTeam', 'editPost', '', '编辑战队保存', '', '编辑战队保存');
 INSERT INTO `dj_admin_menu` VALUES (220, 178, 1, 1, 10000, 'admin', 'MatchChoice', 'index', '', '竞猜列表', '', '');
+INSERT INTO `dj_admin_menu` VALUES (221, 203, 2, 0, 10000, 'admin', 'ChoiceName', 'sort', '', '排序', '', '排序');
+INSERT INTO `dj_admin_menu` VALUES (222, 192, 2, 0, 10000, 'admin', 'Classify', 'sort', '', '排序', '', '排序');
+INSERT INTO `dj_admin_menu` VALUES (223, 220, 1, 0, 10000, 'admin', 'MatchChoice', 'add', '', '添加竞猜', '', '添加竞猜');
+INSERT INTO `dj_admin_menu` VALUES (224, 220, 2, 0, 10000, 'admin', 'MatchChoice', 'addPost', '', '添加竞猜保存', '', '添加竞猜保存');
+INSERT INTO `dj_admin_menu` VALUES (225, 220, 2, 0, 10000, 'admin', 'MatchChoice', 'update', '', '停用启用竞猜', '', '停用启用竞猜');
+INSERT INTO `dj_admin_menu` VALUES (226, 220, 2, 0, 10000, 'admin', 'MatchChoice', 'delete', '', '删除竞猜', '', '删除竞猜');
+INSERT INTO `dj_admin_menu` VALUES (227, 220, 1, 0, 10000, 'admin', 'MatchChoice', 'edit', '', '编辑竞猜', '', '编辑竞猜');
+INSERT INTO `dj_admin_menu` VALUES (228, 220, 2, 0, 10000, 'admin', 'MatchChoice', 'editPost', '', '编辑竞猜保存', '', '编辑竞猜保存');
+INSERT INTO `dj_admin_menu` VALUES (229, 170, 1, 1, 10000, 'admin', 'Order', 'index', '', '订单列表', '', '商品列表');
+INSERT INTO `dj_admin_menu` VALUES (230, 229, 2, 0, 10000, 'admin', 'Order', 'update', '', '修改订单状态', '', '修改订单状态');
+INSERT INTO `dj_admin_menu` VALUES (231, 229, 2, 0, 10000, 'admin', 'Order', 'delete', '', '删除订单', '', '删除订单');
+INSERT INTO `dj_admin_menu` VALUES (232, 229, 2, 0, 10000, 'admin', 'Order', 'delivery', '', '发货', '', '发货');
+INSERT INTO `dj_admin_menu` VALUES (233, 229, 1, 0, 10000, 'admin', 'Order', 'edit', '', '编辑订单', '', '编辑订单');
+INSERT INTO `dj_admin_menu` VALUES (234, 229, 2, 0, 10000, 'admin', 'Order', 'editPost', '', '编辑订单保存', '', '编辑订单保存');
 
 -- ----------------------------
 -- Table structure for dj_asset
@@ -309,7 +323,7 @@ CREATE TABLE `dj_auth_rule`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `name`(`name`) USING BTREE,
   INDEX `module`(`app`, `status`, `type`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 220 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '权限规则表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 234 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '权限规则表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of dj_auth_rule
@@ -533,6 +547,20 @@ INSERT INTO `dj_auth_rule` VALUES (216, 1, 'admin', 'admin_url', 'admin/WarTeam/
 INSERT INTO `dj_auth_rule` VALUES (217, 1, 'admin', 'admin_url', 'admin/WarTeam/edit', '', '编辑商品', '');
 INSERT INTO `dj_auth_rule` VALUES (218, 1, 'admin', 'admin_url', 'admin/WarTeam/editPost', '', '编辑战队保存', '');
 INSERT INTO `dj_auth_rule` VALUES (219, 1, 'admin', 'admin_url', 'admin/MatchChoice/index', '', '竞猜列表', '');
+INSERT INTO `dj_auth_rule` VALUES (220, 1, 'admin', 'admin_url', 'admin/ChoiceName/sort', '', '排序', '');
+INSERT INTO `dj_auth_rule` VALUES (221, 1, 'admin', 'admin_url', 'admin/Classify/sort', '', '排序', '');
+INSERT INTO `dj_auth_rule` VALUES (222, 1, 'admin', 'admin_url', 'admin/MatchChoice/add', '', '添加竞猜', '');
+INSERT INTO `dj_auth_rule` VALUES (223, 1, 'admin', 'admin_url', 'admin/MatchChoice/addPost', '', '添加竞猜保存', '');
+INSERT INTO `dj_auth_rule` VALUES (224, 1, 'admin', 'admin_url', 'admin/MatchChoice/update', '', '停用启用竞猜', '');
+INSERT INTO `dj_auth_rule` VALUES (225, 1, 'admin', 'admin_url', 'admin/MatchChoice/delete', '', '删除竞猜', '');
+INSERT INTO `dj_auth_rule` VALUES (226, 1, 'admin', 'admin_url', 'admin/MatchChoice/edit', '', '编辑竞猜', '');
+INSERT INTO `dj_auth_rule` VALUES (227, 1, 'admin', 'admin_url', 'admin/MatchChoice/editPost', '', '编辑竞猜保存', '');
+INSERT INTO `dj_auth_rule` VALUES (228, 1, 'admin', 'admin_url', 'admin/Order/index', '', '订单列表', '');
+INSERT INTO `dj_auth_rule` VALUES (229, 1, 'admin', 'admin_url', 'admin/Order/update', '', '修改订单状态', '');
+INSERT INTO `dj_auth_rule` VALUES (230, 1, 'admin', 'admin_url', 'admin/Order/delete', '', '删除订单', '');
+INSERT INTO `dj_auth_rule` VALUES (231, 1, 'admin', 'admin_url', 'admin/Order/delivery', '', '发货', '');
+INSERT INTO `dj_auth_rule` VALUES (232, 1, 'admin', 'admin_url', 'admin/Order/edit', '', '编辑订单', '');
+INSERT INTO `dj_auth_rule` VALUES (233, 1, 'admin', 'admin_url', 'admin/Order/editPost', '', '编辑订单保存', '');
 
 -- ----------------------------
 -- Table structure for dj_choice_name
@@ -573,13 +601,22 @@ CREATE TABLE `dj_classify`  (
   `status` tinyint(1) UNSIGNED NOT NULL DEFAULT 1 COMMENT '状态 1:启用;2:停用;',
   `deletetime` bigint(12) UNSIGNED NOT NULL DEFAULT 1 COMMENT '删除表示 1:正常',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '赛事分类' ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '赛事分类' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of dj_classify
 -- ----------------------------
 INSERT INTO `dj_classify` VALUES (1, 0, '英雄联盟', 'http://egame.leidata.com/wechat/Public/Esports/img/lol_new@.png', 1000, 1534761654, 1, 1);
 INSERT INTO `dj_classify` VALUES (2, 1, 'Turkish Champions League', 'http://egame.leidata.com/wechat/Public/Esports/img/game-logo/lol@.png', 1000, 1534761791, 1, 1);
+INSERT INTO `dj_classify` VALUES (3, 0, '王者荣耀', 'http://egame.leidata.com/wechat/Public/Esports/img/wzry_new@.png', 1000, 1535702567, 1, 1);
+INSERT INTO `dj_classify` VALUES (4, 0, '刀塔2', 'http://egame.leidata.com/wechat/Public/Esports/img/dota2_new@.png', 1000, 1535702725, 1, 1);
+INSERT INTO `dj_classify` VALUES (5, 0, '反恐精英', 'http://egame.leidata.com/wechat/Public/Esports/img/cs_new@.png', 1000, 1535702805, 1, 1);
+INSERT INTO `dj_classify` VALUES (6, 0, '绝地求生', 'http://egame.leidata.com/wechat/Public/Esports/img/cj@.png', 1000, 1535702856, 1, 1);
+INSERT INTO `dj_classify` VALUES (7, 0, '守望先锋', 'http://egame.leidata.com/wechat/Public/Esports/img/swxf_new@.png', 1000, 1535702900, 1, 1);
+INSERT INTO `dj_classify` VALUES (8, 0, '使命召唤', 'http://egame.leidata.com/wechat/Public/Esports/img/sm@.png', 1000, 1535702931, 1, 1);
+INSERT INTO `dj_classify` VALUES (9, 0, '魔兽世界', 'http://egame.leidata.com/wechat/Public/Esports/img/wow@.png', 1000, 1535702961, 1, 1);
+INSERT INTO `dj_classify` VALUES (10, 0, '虚荣', 'http://egame.leidata.com/wechat/Public/Esports/img/xr@.png', 1000, 1535703003, 1, 1);
+INSERT INTO `dj_classify` VALUES (11, 5, 'DreamHack Masters', 'http://egame.leidata.com/wechat/Public/Esports/img/game-logo/CSGO@.png', 1000, 1535703635, 1, 1);
 
 -- ----------------------------
 -- Table structure for dj_comment
@@ -774,12 +811,13 @@ CREATE TABLE `dj_match`  (
   `time` bigint(15) UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建时间',
   `deletetime` bigint(12) UNSIGNED NOT NULL DEFAULT 1 COMMENT '删除表示 1:正常',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '赛事列表' ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '赛事列表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of dj_match
 -- ----------------------------
 INSERT INTO `dj_match` VALUES (1, '20180824143510153509251046906', 2, 1, 3, 1, 1534847160, 1, 2, 1, 1, 1534847217, 1);
+INSERT INTO `dj_match` VALUES (2, '20180831162215153570373524974', 11, 1, 4, 5, 1535702400, 1, 2, 1, 0, 1535703735, 1);
 
 -- ----------------------------
 -- Table structure for dj_match_bureau
@@ -1295,8 +1333,8 @@ CREATE TABLE `dj_user`  (
 -- ----------------------------
 -- Records of dj_user
 -- ----------------------------
-INSERT INTO `dj_user` VALUES (1, 1, 0, -28800, 1535508796, 0, 0, 0.00, 1534385538, 1, 'admin', '###8d900c2deab8b6630ac19285294b21ec', '小谢', '2470588931@qq.com', '', '', '', '127.0.0.1', '', '', NULL);
-INSERT INTO `dj_user` VALUES (2, 2, 0, 0, 1535530573, 2, 2, 0.00, 1534910393, 1, 'zhangsan', '###8d900c2deab8b6630ac19285294b21ec', '张三', '123456@qq.com', '', '', '', '127.0.0.1', '', '13532637539', NULL);
+INSERT INTO `dj_user` VALUES (1, 1, 0, -28800, 1535697571, 0, 0, 0.00, 1534385538, 1, 'admin', '###8d900c2deab8b6630ac19285294b21ec', '小谢', '2470588931@qq.com', '', '', '', '127.0.0.1', '', '', NULL);
+INSERT INTO `dj_user` VALUES (2, 2, 0, 0, 1535705659, 7, 7, 0.00, 1534910393, 1, 'zhangsan', '###8d900c2deab8b6630ac19285294b21ec', '张三', '123456@qq.com', '', '', '', '127.0.0.1', '', '13532637539', NULL);
 
 -- ----------------------------
 -- Table structure for dj_user_action
@@ -1366,7 +1404,13 @@ CREATE TABLE `dj_user_currency`  (
   `time` bigint(15) UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建时间',
   `deletetime` tinyint(10) UNSIGNED NOT NULL DEFAULT 1 COMMENT '删除标识 1:正常',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户虚拟币持有数目' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户虚拟币持有数目' ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of dj_user_currency
+-- ----------------------------
+INSERT INTO `dj_user_currency` VALUES (1, 2, 1, 36, 1, 1535601980, 1);
+INSERT INTO `dj_user_currency` VALUES (2, 2, 2, 2400, 1, 1535601980, 1);
 
 -- ----------------------------
 -- Table structure for dj_user_favorite
@@ -1434,7 +1478,15 @@ CREATE TABLE `dj_user_money`  (
   `status` tinyint(1) UNSIGNED NOT NULL DEFAULT 1 COMMENT '状态 1:交易成功;2:;',
   `deletetime` tinyint(1) UNSIGNED NOT NULL DEFAULT 1 COMMENT '删除标识 1:正常',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '账号交易记录' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '账号交易记录' ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of dj_user_money
+-- ----------------------------
+INSERT INTO `dj_user_money` VALUES (1, 2, 1, 1, 60, 0, '充值', 1535606392, 1, 1);
+INSERT INTO `dj_user_money` VALUES (2, 2, 2, 1, 600, 0, '兑换添加', 1535606509, 1, 1);
+INSERT INTO `dj_user_money` VALUES (3, 2, 2, 1, 600, 1800, '兑换添加', 1535606779, 1, 1);
+INSERT INTO `dj_user_money` VALUES (4, 2, 1, 2, 6, 42, '兑换减少', 1535606779, 1, 1);
 
 -- ----------------------------
 -- Table structure for dj_user_score_log
@@ -1448,13 +1500,18 @@ CREATE TABLE `dj_user_score_log`  (
   `score` int(11) NOT NULL DEFAULT 0 COMMENT '更改积分，可以为负',
   `coin` int(11) NOT NULL DEFAULT 0 COMMENT '更改金币，可以为负',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户操作积分等奖励日志表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户操作积分等奖励日志表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of dj_user_score_log
 -- ----------------------------
 INSERT INTO `dj_user_score_log` VALUES (1, 2, 1535513128, 'login', 1, 1);
 INSERT INTO `dj_user_score_log` VALUES (2, 2, 1535530573, 'login', 1, 1);
+INSERT INTO `dj_user_score_log` VALUES (3, 2, 1535594714, 'login', 1, 1);
+INSERT INTO `dj_user_score_log` VALUES (4, 2, 1535601628, 'login', 1, 1);
+INSERT INTO `dj_user_score_log` VALUES (5, 2, 1535606363, 'login', 1, 1);
+INSERT INTO `dj_user_score_log` VALUES (6, 2, 1535684408, 'login', 1, 1);
+INSERT INTO `dj_user_score_log` VALUES (7, 2, 1535705660, 'login', 1, 1);
 
 -- ----------------------------
 -- Table structure for dj_user_token
@@ -1511,7 +1568,7 @@ CREATE TABLE `dj_war_team`  (
   `status` tinyint(1) UNSIGNED NOT NULL DEFAULT 1 COMMENT '状态: 1正常',
   `deletetime` tinyint(1) UNSIGNED NOT NULL DEFAULT 1 COMMENT '删除标识 1:正常',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '战队列表' ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '战队列表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of dj_war_team
@@ -1519,5 +1576,7 @@ CREATE TABLE `dj_war_team`  (
 INSERT INTO `dj_war_team` VALUES (1, 'AGO', 'http://egame.leidata.com/wechat/Public/Esports/img/team_logo/156133.png', 1, '', '', '', 1534748214, 1, 1);
 INSERT INTO `dj_war_team` VALUES (2, '3DMAX', 'http://egame.leidata.com/wechat/Public/Esports/img/team_logo/leida.png', 1, '', '', '', 1534750448, 1, 1);
 INSERT INTO `dj_war_team` VALUES (3, 'Royal Bandits', 'http://egame.leidata.com/wechat/Public/Esports/img/team_logo/156717.png', 1, '', '', '', 1534750611, 1, 1);
+INSERT INTO `dj_war_team` VALUES (4, 'Astralis', 'http://egame.leidata.com/wechat/Public/Esports/img/team_logo/151354.png', 0, '', '', '', 1535703670, 1, 1);
+INSERT INTO `dj_war_team` VALUES (5, 'TyLoo', 'http://egame.leidata.com/wechat/Public/Esports/img/team_logo/153186.png', 0, '', '', '', 1535703702, 1, 1);
 
 SET FOREIGN_KEY_CHECKS = 1;

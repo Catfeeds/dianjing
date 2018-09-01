@@ -137,6 +137,8 @@ class CurrencyController extends AdminBaseController
         $result = $this -> Model -> save(['deletetime'=>time()],['id'=>$id]);
         if ($result)
         {
+            $name = $this -> Model -> where(['id'=>$id]) -> field('title') -> find();
+            RecycleBinController::addOne($id,'currency',$name['title']);
             $this -> success('删除成功!');
         }
         else

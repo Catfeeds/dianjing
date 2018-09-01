@@ -34,4 +34,18 @@ class GoodsModel extends Model
         return $data;
     }
 
+    /**
+     * 库存减少
+     * @param $id
+     * @param $number
+     * @return int|true
+     * @throws \think\Exception
+     */
+    public function reduce($id,$number)
+    {
+        return $this
+            -> where(['id'=> $id])
+            -> setDec('stock',$number);
+    }
+
 }

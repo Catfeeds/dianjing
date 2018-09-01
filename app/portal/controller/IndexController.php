@@ -20,6 +20,7 @@ class IndexController extends HomeBaseController
      */
     public function index()
     {
+
         $type = $this -> request -> param('type',0);
 
         $data = model('match') -> index($type);

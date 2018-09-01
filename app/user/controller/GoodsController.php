@@ -61,13 +61,20 @@ class GoodsController extends HomeBaseController
         if ($this -> request -> isPost())
         {
             $data   = $this -> request -> param();
+            $result = $this -> validate($data,'order');
+            if ($result!==true)
+            {
+                $this -> error($result);
+            }
             $user   = session('user');
             //减少金币
             $data['all_price'] = $data['price']*$data['number'];
-            if ($data['all_price'] < $user['gold']['number'])
+
+            if ($data['all_price'] > $user['gold']['number'])
             {
                 $this -> error('您的余额不足');
             }
+
             $array = array(
                 'user_id' => $user['id'],
                 'id'      => $user['gold']['id'],
@@ -75,11 +82,14 @@ class GoodsController extends HomeBaseController
                 'number'  => $data['all_price'],
                 'test'    => '商品兑换',
             );
+            dump($array);exit;
             $result = model('UserCurrency') -> reduce($array);
+
             if ($result)
             {
                 //添加订单
                 $result = model('Order') -> addOne($data);
+
                 if ($result===true)
                 {
                     $this -> success('添加成功',cmf_url('Order/index'));

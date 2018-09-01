@@ -155,6 +155,8 @@ class GoodsController extends AdminBaseController
         $result = $this -> Model -> save(['deletetime'=>time()],['id'=>$id]);
         if ($result)
         {
+            $name = $this -> Model -> where(['id'=>$id]) -> field('name') -> find();
+            RecycleBinController::addOne($id,'goods',$name['name']);
             $this -> success('删除成功!');
         }
         else
